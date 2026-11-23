@@ -8,10 +8,28 @@
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Kalam:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Zestaw ikon SVG (styl liniowy, 24×24, stroke 2) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><rect x="2" y="6" width="20" height="12" rx="2"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-meh" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 15h8M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-frown" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  </svg>
+
   <a class="skip-link" href="#main">Przejdź do treści</a>
 
   <!-- ========== HEADER ========== -->
@@ -22,7 +40,9 @@
         <span class="logo__text">Grosik<small>finanse bez stresu</small></span>
       </a>
 
-      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">☰</button>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
 
       <nav class="nav" id="menu" aria-label="Menu główne">
         <ul>
@@ -31,11 +51,10 @@
           <li><a href="#ux">UX</a></li>
           <li><a href="#ui">UI</a></li>
           <li><a href="#walidacja">Walidacja</a></li>
-          <li><a href="case-study.html" aria-current="page">Case study</a></li>
         </ul>
       </nav>
 
-      <a href="#figma" class="btn btn--small header__login">Figma</a>
+      <a href="case-study.html" class="btn btn--small header__cta" aria-current="page">Case study</a>
     </div>
   </header>
 
@@ -54,7 +73,7 @@
         <div class="cs-meta">
           <div><strong>Rola</strong>UX/UI Designer (projekt indywidualny)</div>
           <div><strong>Czas</strong>6 tygodni</div>
-          <div><strong>Narzędzia</strong>Figma, FigJam, Google Forms, HTML/CSS</div>
+          <div><strong>Narzędzia</strong>HTML, CSS, JavaScript, GitHub Pages</div>
           <div><strong>Platforma</strong>Aplikacja mobilna (iOS / Android)</div>
         </div>
 
@@ -65,10 +84,9 @@
           <li><a href="#ui">3. UI i design system</a></li>
           <li><a href="#walidacja">4. Walidacja</a></li>
           <li><a href="#decyzje">Uzasadnienie decyzji</a></li>
-          <li><a href="#figma">Prototyp</a></li>
         </ul>
 
-        <p class="note" style="margin-top: 2rem;">
+        <p class="note">
           <strong>Uwaga:</strong> dane z wywiadów, persony i wyniki testów to przykładowe treści –
           do podmiany na wyniki własnych badań (szukaj komentarzy <code>TODO</code> w kodzie).
         </p>
@@ -90,11 +108,11 @@
         </div>
         <div class="card">
           <h3>Cele projektu</h3>
-          <ul>
-            <li>Ułatwić planowanie kieszonkowego w skali tygodnia.</li>
-            <li>Zwiększyć motywację do oszczędzania na konkretny cel.</li>
-            <li>Przekazać podstawy ekonomii w krótkiej, angażującej formie.</li>
-            <li>Spełnić wymagania dostępności <strong>WCAG 2.1 AA</strong>.</li>
+          <ul class="icon-list">
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Ułatwić planowanie kieszonkowego w skali tygodnia.</li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Zwiększyć motywację do oszczędzania na konkretny cel.</li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Przekazać podstawy ekonomii w krótkiej, angażującej formie.</li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Spełnić wymagania dostępności <strong>WCAG 2.1 AA</strong>.</li>
           </ul>
         </div>
       </div>
@@ -124,11 +142,11 @@
           </table>
         </div>
 
-        <h3 style="margin-top: 2rem;">Persony</h3>
+        <h3 class="mt-m">Persony</h3>
         <div class="grid-3">
           <article class="card persona">
             <div class="persona__head">
-              <div class="avatar" aria-hidden="true">👧</div>
+              <div class="avatar"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></div>
               <div><h4>Kasia, 15 lat</h4><span class="tag">Wydająca spontanicznie</span></div>
             </div>
             <p><strong>Cele:</strong></p>
@@ -139,7 +157,7 @@
           </article>
           <article class="card persona">
             <div class="persona__head">
-              <div class="avatar" aria-hidden="true">👦</div>
+              <div class="avatar"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></div>
               <div><h4>Tomek, 17 lat</h4><span class="tag">Ambitny oszczędzający</span></div>
             </div>
             <p><strong>Cele:</strong></p>
@@ -150,7 +168,7 @@
           </article>
           <article class="card persona">
             <div class="persona__head">
-              <div class="avatar" aria-hidden="true">👩</div>
+              <div class="avatar"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-users"/></svg></div>
               <div><h4>Anna, 44 lata</h4><span class="tag">Rodzic</span></div>
             </div>
             <p><strong>Cele:</strong></p>
@@ -161,7 +179,7 @@
           </article>
         </div>
 
-        <h3 style="margin-top: 2rem;">Mapa podróży użytkownika (Kasia)</h3>
+        <h3 class="mt-m">Mapa podróży użytkownika (Kasia)</h3>
         <div class="table-wrap">
           <table>
             <thead>
@@ -176,13 +194,19 @@
             <tbody>
               <tr><th scope="row">Działania</th><td>Odbiera 200 zł na konto</td><td>Jedzenie, kino, gry</td><td>Sprawdza saldo</td><td>Prosi rodziców o więcej</td></tr>
               <tr><th scope="row">Myśli</th><td>„Ale dużo!”</td><td>„To tylko 10 zł”</td><td>„Gdzie to zniknęło?”</td><td>„Znowu to samo…”</td></tr>
-              <tr><th scope="row">Emocje</th><td>😀</td><td>🙂</td><td>😟</td><td>😞</td></tr>
+              <tr>
+                <th scope="row">Emocje</th>
+                <td><span class="emotion emotion--good"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-smile"/></svg>Radość</span></td>
+                <td><span class="emotion emotion--good"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-smile"/></svg>Zadowolenie</span></td>
+                <td><span class="emotion emotion--mid"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-meh"/></svg>Niepokój</span></td>
+                <td><span class="emotion emotion--bad"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-frown"/></svg>Frustracja</span></td>
+              </tr>
               <tr><th scope="row">Szansa dla produktu</th><td>Plan tygodniowy</td><td>Szybkie dodanie wydatku</td><td>Ostrzeżenie o tempie</td><td>Podsumowanie + wskazówka</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h3 style="margin-top: 2rem;">Analiza konkurencji (benchmark)</h3>
+        <h3 class="mt-m">Analiza konkurencji (benchmark)</h3>
         <div class="table-wrap">
           <table>
             <thead>
@@ -241,23 +265,22 @@
               <li class="flow__decision">Przekroczono limit?</li>
               <li>Podsumowanie</li>
             </ol>
-            <p style="margin-top: 1.5rem;"><strong>Flow 2: Utworzenie celu</strong></p>
+            <p><strong>Flow 2: Utworzenie celu</strong></p>
             <ol class="flow">
               <li>Zakładka Cele</li>
               <li>Nowy cel</li>
               <li>Nazwa + kwota</li>
               <li>Termin</li>
               <li class="flow__decision">Realny plan?</li>
-              <li>Cel zapisany 🎉</li>
+              <li>Cel zapisany</li>
             </ol>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">Ramka przerywana = punkt decyzyjny.</p>
+            <p><small>Ramka przerywana = punkt decyzyjny.</small></p>
           </div>
         </div>
 
-        <h3 style="margin-top: 2rem;">Wireframe'y (low-fi)</h3>
-        <!-- TODO: można tu wstawić zrzuty z Figmy: <img src="img/wireframe-1.png" alt="..."> -->
+        <h3 class="mt-m">Wireframe'y (low-fi)</h3>
         <div class="grid-4">
-          <figure style="margin:0">
+          <figure class="wireframe">
             <div class="wire" aria-hidden="true">
               <div class="wire__box wire__box--s"></div>
               <div class="wire__box wire__box--l"></div>
@@ -265,14 +288,14 @@
             </div>
             <figcaption class="wire__caption">Budżet</figcaption>
           </figure>
-          <figure style="margin:0">
+          <figure class="wireframe">
             <div class="wire" aria-hidden="true">
               <div class="wire__box wire__box--s"></div>
               <div class="wire__box wire__box--m"></div><div class="wire__box wire__box--m"></div><div class="wire__box wire__box--m"></div>
             </div>
             <figcaption class="wire__caption">Dodaj wydatek</figcaption>
           </figure>
-          <figure style="margin:0">
+          <figure class="wireframe">
             <div class="wire" aria-hidden="true">
               <div class="wire__box wire__box--s"></div>
               <div class="wire__box wire__box--l"></div>
@@ -280,7 +303,7 @@
             </div>
             <figcaption class="wire__caption">Cel</figcaption>
           </figure>
-          <figure style="margin:0">
+          <figure class="wireframe">
             <div class="wire" aria-hidden="true">
               <div class="wire__box wire__box--m"></div>
               <div class="wire__box"></div><div class="wire__box"></div><div class="wire__box"></div>
@@ -289,7 +312,7 @@
           </figure>
         </div>
 
-        <h3 style="margin-top: 2rem;">Wstępne testy makiet</h3>
+        <h3 class="mt-m">Wstępne testy makiet</h3>
         <p>Test „na papierze” wireframe'ów z 3 uczniami (zadanie: dodaj wydatek, utwórz cel).</p>
         <ul>
           <li>2/3 osób nie znalazło przycisku dodawania – <strong>zmiana:</strong> duży pływający przycisk „+”.</li>
@@ -306,35 +329,37 @@
         <h2>Kreacja i UI Design</h2>
 
         <h3>Paleta kolorów i kontrast (WCAG 2.1 AA)</h3>
-        <p>Każdy kolor tekstu ma kontrast min. <strong>4.5:1</strong> na białym tle. Jasny turkus służy tylko do dekoracji.</p>
+        <p>Każdy kolor tekstu ma kontrast min. <strong>4.5:1</strong> na białym tle. Jasny turkus służy wyłącznie do dekoracji i nigdy nie niesie informacji.</p>
         <div class="grid-4">
           <div class="swatch">
-            <div class="swatch__color" style="background: #1b2a6b"></div>
-            <div class="swatch__info"><strong>Navy #1B2A6B</strong>Nagłówki, przyciski · 13.2:1 ✅</div>
+            <div class="swatch__color swatch__color--navy"></div>
+            <div class="swatch__info"><strong>Navy #1B2A6B</strong>Nagłówki, przyciski<br><span class="status status--ok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>13.2:1</span></div>
           </div>
           <div class="swatch">
-            <div class="swatch__color" style="background: #127680"></div>
-            <div class="swatch__info"><strong>Teal #127680</strong>Linki, akcenty · 5.4:1 ✅</div>
+            <div class="swatch__color swatch__color--teal"></div>
+            <div class="swatch__info"><strong>Teal #127680</strong>Linki, akcenty<br><span class="status status--ok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>5.4:1</span></div>
           </div>
           <div class="swatch">
-            <div class="swatch__color" style="background: #d62828"></div>
-            <div class="swatch__info"><strong>Red #D62828</strong>Wyróżnienia, focus · 5.0:1 ✅</div>
+            <div class="swatch__color swatch__color--red"></div>
+            <div class="swatch__info"><strong>Red #D62828</strong>Wyróżnienia, focus<br><span class="status status--ok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>5.0:1</span></div>
           </div>
           <div class="swatch">
-            <div class="swatch__color" style="background: #5bbfc9"></div>
-            <div class="swatch__info"><strong>Teal light #5BBFC9</strong>Tylko dekoracje · 2.2:1 ⚠️</div>
+            <div class="swatch__color swatch__color--green"></div>
+            <div class="swatch__info"><strong>Green #15803D</strong>Sukces, cel osiągnięty<br><span class="status status--ok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>5.0:1</span></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--teal-light"></div>
+            <div class="swatch__info"><strong>Teal light #5BBFC9</strong>Tylko dekoracje<br><span class="status status--warn"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-alert"/></svg>2.2:1 – nie do tekstu</span></div>
           </div>
         </div>
 
-        <div class="grid-2" style="margin-top: 2rem;">
+        <div class="grid-2 mt-m">
           <div class="card">
             <h3>Typografia</h3>
-            <p style="font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--navy); margin: 0;">Poppins 800</p>
-            <p>Nagłówki – geometryczny, nowoczesny, czytelny.</p>
-            <p style="font-size: 1.2rem; margin: 0;">Fira Sans 400 / 600</p>
-            <p>Tekst główny – min. 16 px, interlinia 1.65.</p>
-            <p class="hand" style="font-size: 1.6rem; color: var(--navy); margin: 0;">Kalam</p>
-            <p>Akcenty „odręczne” – tylko krótkie tytuły.</p>
+            <p class="type-sample--head">Lexend 800</p>
+            <p>Nagłówki – krój zaprojektowany z myślą o łatwości czytania; nowoczesny i przyjazny młodym odbiorcom.</p>
+            <p class="type-sample--body">Source Sans 3 400 / 600</p>
+            <p>Tekst główny – neutralny i bardzo czytelny, min. 16 px, interlinia 1.6.</p>
           </div>
           <div class="card">
             <h3>Tokeny</h3>
@@ -342,10 +367,10 @@
               <table>
                 <thead><tr><th scope="col">Token</th><th scope="col">Wartość</th></tr></thead>
                 <tbody>
-                  <tr><td><code>--space-s / m / l</code></td><td>16 / 32 / 64 px</td></tr>
-                  <tr><td><code>--radius</code></td><td>12 px</td></tr>
-                  <tr><td><code>--radius-pill</code></td><td>999 px (przyciski)</td></tr>
-                  <tr><td><code>--shadow</code></td><td>0 6 20 navy / 12%</td></tr>
+                  <tr><td><code>--space-xs / s / m / l</code></td><td>8 / 16 / 32 / 64 px (rytm 8 px)</td></tr>
+                  <tr><td><code>--icon-sm / md / lg</code></td><td>20 / 24 / 32 px</td></tr>
+                  <tr><td><code>--radius</code> / <code>--radius-pill</code></td><td>12 px / 999 px</td></tr>
+                  <tr><td><code>--duration-fast / duration</code></td><td>150 / 250 ms</td></tr>
                   <tr><td>Cel dotykowy</td><td>min. 44 × 44 px</td></tr>
                 </tbody>
               </table>
@@ -353,44 +378,45 @@
           </div>
         </div>
 
-        <h3 style="margin-top: 2rem;">Komponenty</h3>
-        <div class="card" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+        <h3 class="mt-m">Komponenty</h3>
+        <div class="card component-row">
           <a href="#ui" class="btn">Przycisk główny</a>
           <a href="#ui" class="btn btn--outline">Przycisk drugorzędny</a>
           <span class="tag">Etykieta</span>
-          <div style="width: 200px;">
-            <div class="phone__bar phone__bar--fill" style="--fill: 70%"></div>
+          <div class="progress-demo">
+            <div class="phone__bar" style="--fill: 70%"></div>
             <small>Pasek postępu celu</small>
           </div>
-          <div class="card__icon" aria-hidden="true">🎯</div>
+          <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
         </div>
-        <ul style="margin-top: 1rem;">
-          <li>Wszystkie elementy interaktywne mają widoczny stan <strong>focus</strong> (czerwona obwódka).</li>
-          <li>Ikony zawsze z podpisem – kolor nie jest jedynym nośnikiem informacji.</li>
-          <li>Obsługa <code>prefers-reduced-motion</code> – animacje wyłączają się na życzenie systemu.</li>
+        <ul class="icon-list mt-m">
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Ikony SVG z jednej rodziny (styl liniowy, grubość 2 px) zamiast emoji – wyglądają tak samo na każdym systemie.</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Ikony dekoracyjne obok tekstu są ukryte dla czytników ekranu (<code>aria-hidden</code>).</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Widoczny stan <strong>focus</strong> (czerwona obwódka) na każdym elemencie interaktywnym.</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Kolor nigdy nie jest jedynym nośnikiem informacji – zawsze z ikoną lub tekstem.</li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Karuzela ma przycisk pauzy i zatrzymuje się przy fokusie; animacje wyłączają się przy <code>prefers-reduced-motion</code>.</li>
         </ul>
 
-        <h3 style="margin-top: 2rem;">Ekrany high-fi</h3>
-        <!-- TODO: wstaw eksporty z Figmy, np. <img src="img/hifi-budzet.png" alt="Ekran budżetu..."> -->
+        <h3 class="mt-m">Ekrany high-fi</h3>
         <div class="grid-3">
-          <div class="phone" aria-label="Ekran budżetu" role="img">
+          <div class="phone" role="img" aria-label="Ekran budżetu: zostało 48,50 zł na ten tydzień">
             <div class="phone__screen">
               <p>Zostało na ten tydzień</p>
               <p class="phone__big">48,50 zł</p>
-              <div class="phone__bar phone__bar--fill" style="--fill: 65%"></div>
-              <div class="phone__tile">🍔 Jedzenie – 22 zł</div>
-              <div class="phone__tile">🎮 Rozrywka – 15 zł</div>
+              <div class="phone__bar" style="--fill: 65%"></div>
+              <div class="phone__tile"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-utensils"/></svg>Jedzenie – 22 zł</div>
+              <div class="phone__tile"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-gamepad"/></svg>Rozrywka – 15 zł</div>
             </div>
           </div>
-          <div class="phone" aria-label="Ekran celu oszczędnościowego" role="img">
+          <div class="phone" role="img" aria-label="Ekran celu: słuchawki, 60% zebranej kwoty">
             <div class="phone__screen">
               <p>Twój cel</p>
-              <p class="phone__big">🎧 Słuchawki</p>
-              <div class="phone__bar phone__bar--fill" style="--fill: 60%"></div>
+              <p class="phone__big"><svg class="icon" aria-hidden="true"><use href="#i-headphones"/></svg>Słuchawki</p>
+              <div class="phone__bar" style="--fill: 60%"></div>
               <div class="phone__tile">Odkładaj 20 zł / tydz.</div>
             </div>
           </div>
-          <div class="phone" aria-label="Ekran quizu dnia" role="img">
+          <div class="phone" role="img" aria-label="Ekran quizu dnia: co to jest inflacja">
             <div class="phone__screen">
               <p>Quiz dnia</p>
               <p class="phone__big">Co to jest inflacja?</p>
@@ -408,7 +434,7 @@
         <span class="phase-number" aria-hidden="true">04</span>
         <h2>Walidacja</h2>
         <!-- TODO: podmień na wyniki własnych testów -->
-        <p>Interaktywny prototyp w Figmie przetestowałem/am z <strong>4 nowymi osobami</strong> (13, 15, 16 i 18 lat), które nie brały udziału w wywiadach. Metoda: moderowany test zadaniowy + „thinking aloud”.</p>
+        <p>Interaktywny prototyp przetestowałem/am z <strong>4 nowymi osobami</strong> (13, 15, 16 i 18 lat), które nie brały udziału w wywiadach. Metoda: moderowany test zadaniowy + „thinking aloud”.</p>
 
         <div class="grid-3">
           <div class="card">
@@ -425,7 +451,7 @@
           </div>
         </div>
 
-        <h3 style="margin-top: 2rem;">Wnioski i iteracje</h3>
+        <h3 class="mt-m">Wnioski i iteracje</h3>
         <div class="table-wrap">
           <table>
             <thead><tr><th scope="col">Problem</th><th scope="col">Iteracja</th></tr></thead>
@@ -433,6 +459,7 @@
               <tr><td>Kalendarz przy celu był zbyt „dorosły”.</td><td>Zamiana na wybór: „za miesiąc / 3 miesiące / pół roku”.</td></tr>
               <tr><td>Nie było jasne, czy rodzic widzi wydatki.</td><td>Dodano ekran „Co widzi rodzic” w onboardingu.</td></tr>
               <tr><td>Za mały kontrast szarych podpisów.</td><td>Zmiana koloru tekstu pomocniczego na #4A4A55 (8.9:1).</td></tr>
+              <tr><td>Emoji wyglądały inaczej na Androidzie i iPhonie.</td><td>Zamiana na jeden zestaw ikon SVG.</td></tr>
             </tbody>
           </table>
         </div>
@@ -458,18 +485,6 @@
             <li><strong>Dane lokalnie na urządzeniu</strong> – mniej danych osobowych nieletnich na serwerze (RODO).</li>
             <li>Ta strona: czysty HTML/CSS/JS na GitHub Pages – darmowy hosting i kontrola wersji.</li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== FIGMA ========== -->
-    <section class="section" id="figma">
-      <div class="container">
-        <div class="cta">
-          <h2>Interaktywny prototyp</h2>
-          <p>Klikalna wersja aplikacji przygotowana w Figmie.</p>
-          <!-- TODO: wklej link do swojego prototypu w Figmie -->
-          <a href="https://www.figma.com/" class="btn" target="_blank" rel="noopener">Otwórz w Figmie</a>
         </div>
       </div>
     </section>

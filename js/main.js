@@ -8,25 +8,32 @@ if (toggle && nav) {
   toggle.addEventListener("click", () => {
     const open = nav.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", open);
+    toggle.setAttribute("aria-label", open ? "Zamknij menu" : "Otwórz menu");
   });
 }
 
-// 2. Slider z kropkami (automatyczny, pauza po kliknięciu)
-const slides = document.querySelectorAll(".slide");
-const dotsBox = document.querySelector(".slider__dots");
+// 2. Slider z kropkami
+//    - autoplay co 6 s, przycisk pauzy (WCAG 2.2.2)
+//    - zatrzymuje się po najechaniu myszą / fokusie klawiatury
+//    - brak autoplay przy "ograniczonym ruchu" w systemie
+const slider = document.querySelector(".slider");
 
-if (slides.length && dotsBox) {
+if (slider) {
+  const slides = slider.querySelectorAll(".slide");
+  const dotsBox = slider.querySelector(".slider__dots");
+  const pauseBtn = slider.querySelector(".slider__pause");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   let current = 0;
-  let timer;
+  let timer = null;
+  let paused = reduceMotion; // użytkownik (lub system) wyłączył autoplay
 
   slides.forEach((slide, i) => {
     const dot = document.createElement("button");
+    dot.type = "button";
     dot.className = "slider__dot";
-    dot.setAttribute("aria-label", "Pokaż slajd " + (i + 1));
-    dot.addEventListener("click", () => {
-      showSlide(i);
-      clearInterval(timer); // użytkownik przejął kontrolę – zatrzymujemy autoplay
-    });
+    dot.setAttribute("aria-label", "Pokaż slajd " + (i + 1) + " z " + slides.length);
+    dot.addEventListener("click", () => showSlide(i));
     dotsBox.appendChild(dot);
   });
 
@@ -42,12 +49,36 @@ if (slides.length && dotsBox) {
     dots[current].setAttribute("aria-current", "true");
   }
 
-  showSlide(0);
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!reduceMotion) {
+  function start() {
+    if (paused || timer) return;
     timer = setInterval(() => showSlide((current + 1) % slides.length), 6000);
   }
+
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  function updatePauseButton() {
+    pauseBtn.setAttribute("aria-pressed", paused);
+    pauseBtn.setAttribute("aria-label", paused ? "Wznów automatyczne przewijanie" : "Zatrzymaj automatyczne przewijanie");
+    pauseBtn.querySelector("use").setAttribute("href", paused ? "#i-play" : "#i-pause");
+  }
+
+  pauseBtn.addEventListener("click", () => {
+    paused = !paused;
+    updatePauseButton();
+    paused ? stop() : start();
+  });
+
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+  slider.addEventListener("focusin", stop);
+  slider.addEventListener("focusout", start);
+
+  showSlide(0);
+  updatePauseButton();
+  start();
 }
 
 // 3. Rok w stopce

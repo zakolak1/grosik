@@ -8,10 +8,31 @@
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Kalam:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Zestaw ikon SVG (styl liniowy, 24×24, stroke 2) – używane przez <use href="#..."> -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><rect x="2" y="6" width="20" height="12" rx="2"/></symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 19v2M16 19v2"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  </svg>
+
   <a class="skip-link" href="#main">Przejdź do treści</a>
 
   <!-- ========== HEADER ========== -->
@@ -22,7 +43,9 @@
         <span class="logo__text">Grosik<small>finanse bez stresu</small></span>
       </a>
 
-      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">☰</button>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
 
       <nav class="nav" id="menu" aria-label="Menu główne">
         <ul>
@@ -30,12 +53,11 @@
           <li><a href="#funkcje">Funkcje</a></li>
           <li><a href="#jak-to-dziala">Jak to działa</a></li>
           <li><a href="#dla-kogo">Dla kogo</a></li>
-          <li><a href="case-study.html">Case study</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
 
-      <a href="#prototyp" class="btn btn--small header__login">Prototyp</a>
+      <a href="case-study.html" class="btn btn--small header__cta">Case study</a>
     </div>
   </header>
 
@@ -57,8 +79,8 @@
 
         <div class="frame hero__frame">
           <!-- Slider z ekranami aplikacji -->
-          <div class="slider" aria-roledescription="karuzela" aria-label="Ekrany aplikacji">
-            <div class="slide">
+          <section class="slider" aria-roledescription="karuzela" aria-label="Ekrany aplikacji">
+            <div class="slide" aria-roledescription="slajd" aria-label="1 z 3">
               <div>
                 <span class="tag">Ekran 1</span>
                 <h2>Budżet w kieszeni</h2>
@@ -68,15 +90,15 @@
                 <div class="phone__screen">
                   <p>Zostało na ten tydzień</p>
                   <p class="phone__big">48,50 zł</p>
-                  <div class="phone__bar phone__bar--fill" style="--fill: 65%"></div>
-                  <div class="phone__tile">🍔 Jedzenie – 22 zł</div>
-                  <div class="phone__tile">🎮 Rozrywka – 15 zł</div>
-                  <div class="phone__tile">🚌 Bilet – 14,50 zł</div>
+                  <div class="phone__bar" style="--fill: 65%"></div>
+                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-utensils"/></svg>Jedzenie – 22 zł</div>
+                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-gamepad"/></svg>Rozrywka – 15 zł</div>
+                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-bus"/></svg>Bilet – 14,50 zł</div>
                 </div>
               </div>
             </div>
 
-            <div class="slide">
+            <div class="slide" aria-roledescription="slajd" aria-label="2 z 3">
               <div>
                 <span class="tag">Ekran 2</span>
                 <h2>Cele oszczędnościowe</h2>
@@ -85,16 +107,16 @@
               <div class="phone" aria-hidden="true">
                 <div class="phone__screen">
                   <p>Twój cel</p>
-                  <p class="phone__big">🎧 Słuchawki</p>
+                  <p class="phone__big"><svg class="icon"><use href="#i-headphones"/></svg>Słuchawki</p>
                   <p>180 / 300 zł</p>
-                  <div class="phone__bar phone__bar--fill" style="--fill: 60%"></div>
+                  <div class="phone__bar" style="--fill: 60%"></div>
                   <div class="phone__tile">Odkładaj 20 zł tygodniowo</div>
-                  <div class="phone__tile">Cel osiągniesz za 6 tygodni 🎉</div>
+                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-check"/></svg>Cel za 6 tygodni</div>
                 </div>
               </div>
             </div>
 
-            <div class="slide">
+            <div class="slide" aria-roledescription="slajd" aria-label="3 z 3">
               <div>
                 <span class="tag">Ekran 3</span>
                 <h2>Wyzwania i quizy</h2>
@@ -107,31 +129,36 @@
                   <div class="phone__tile">A. Wzrost cen w czasie</div>
                   <div class="phone__tile">B. Rodzaj konta</div>
                   <div class="phone__tile">C. Podatek od zakupów</div>
-                  <p>🔥 Seria: 7 dni</p>
+                  <p class="phone__streak"><svg class="icon icon--sm"><use href="#i-flame"/></svg>Seria: 7 dni</p>
                 </div>
               </div>
             </div>
 
-            <div class="slider__dots"></div>
-          </div>
+            <div class="slider__controls">
+              <button class="slider__pause" type="button" aria-pressed="false" aria-label="Zatrzymaj automatyczne przewijanie">
+                <svg class="icon icon--sm" aria-hidden="true"><use href="#i-pause"/></svg>
+              </button>
+              <div class="slider__dots"></div>
+            </div>
+          </section>
 
-          <!-- Prawa kolumna jak „okładki” w oryginale -->
+          <!-- Prawa kolumna – moduły aplikacji -->
           <div class="grid-2">
-            <div class="card" style="padding: 1rem; text-align: center;">
-              <div class="card__icon" style="margin: 0 auto 0.5rem;">💰</div>
-              <strong>Budżet</strong>
+            <div class="card mini-card">
+              <span class="card__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+              Budżet
             </div>
-            <div class="card" style="padding: 1rem; text-align: center;">
-              <div class="card__icon" style="margin: 0 auto 0.5rem;">🎯</div>
-              <strong>Cele</strong>
+            <div class="card mini-card">
+              <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
+              Cele
             </div>
-            <div class="card" style="padding: 1rem; text-align: center;">
-              <div class="card__icon" style="margin: 0 auto 0.5rem;">🏆</div>
-              <strong>Wyzwania</strong>
+            <div class="card mini-card">
+              <span class="card__icon card__icon--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+              Wyzwania
             </div>
-            <div class="card" style="padding: 1rem; text-align: center;">
-              <div class="card__icon" style="margin: 0 auto 0.5rem;">📖</div>
-              <strong>Słownik</strong>
+            <div class="card mini-card">
+              <span class="card__icon card__icon--green"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-book"/></svg></span>
+              Słownik
             </div>
           </div>
         </div>
@@ -149,7 +176,7 @@
     <section class="section" id="o-projekcie">
       <div class="container about">
         <div>
-          <h2 class="hand">O projekcie</h2>
+          <h2>O projekcie</h2>
           <p>
             <strong>„Grosik”</strong> to koncepcja aplikacji mobilnej, która uczy nastolatków
             świadomego gospodarowania pieniędzmi. Z badań wynika, że większość młodych ludzi
@@ -158,9 +185,9 @@
           </p>
           <p>
             Grosik łączy prosty budżet, cele oszczędnościowe i krótkie lekcje w formie gry.
-            Dlaczego <a href="case-study.html">„Grosik”</a>? Bo każda duża suma zaczyna się od jednego grosza!
+            Dlaczego „Grosik”? Bo każda duża suma zaczyna się od jednego grosza!
           </p>
-          <a href="case-study.html" class="btn">Sprawdź proces</a>
+          <a href="case-study.html" class="btn">Sprawdź proces <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="sketch" aria-hidden="true">
           <img src="img/logo.svg" alt="" width="260" height="215">
@@ -175,17 +202,17 @@
         <p>Trzy główne moduły zaprojektowane na podstawie wywiadów z uczniami i rodzicami.</p>
         <div class="grid-3">
           <article class="card">
-            <div class="card__icon" aria-hidden="true">💰</div>
+            <span class="card__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-wallet"/></svg></span>
             <h3>Budżet tygodniowy</h3>
             <p>Kieszonkowe dzielone na tygodnie i kategorie. Zero tabelek – wszystko na kolorowych kafelkach.</p>
           </article>
           <article class="card">
-            <div class="card__icon" aria-hidden="true">🎯</div>
+            <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
             <h3>Cele i skarbonki</h3>
             <p>Wirtualne skarbonki na konkretne marzenia z paskiem postępu i przypomnieniami.</p>
           </article>
           <article class="card">
-            <div class="card__icon" aria-hidden="true">🏆</div>
+            <span class="card__icon card__icon--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-trophy"/></svg></span>
             <h3>Wyzwania i lekcje</h3>
             <p>3-minutowe lekcje, quizy i odznaki. Wiedza z ekonomii podana jak w grze.</p>
           </article>
@@ -215,16 +242,19 @@
         <h2>Dla kogo?</h2>
         <div class="grid-3">
           <article class="card">
+            <span class="card__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></span>
             <span class="tag">Uczniowie</span>
             <h3>13–18 lat</h3>
             <p>Dla tych, którzy dostają kieszonkowe lub pierwsze pieniądze z pracy dorywczej.</p>
           </article>
           <article class="card">
+            <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-users"/></svg></span>
             <span class="tag">Rodzice</span>
             <h3>Spokój i rozmowa</h3>
             <p>Opcjonalny podgląd celów dziecka – bez kontroli każdego wydatku.</p>
           </article>
           <article class="card">
+            <span class="card__icon card__icon--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-school"/></svg></span>
             <span class="tag">Nauczyciele</span>
             <h3>Gotowe wyzwania klasowe</h3>
             <p>Wspólne wyzwania dla klasy, które uzupełniają lekcje podstaw przedsiębiorczości.</p>
@@ -233,13 +263,13 @@
       </div>
     </section>
 
-    <!-- ========== CTA / PROTOTYP ========== -->
-    <section class="section" id="prototyp">
+    <!-- ========== CTA ========== -->
+    <section class="section">
       <div class="container">
         <div class="cta">
           <h2>Zobacz, jak powstawał Grosik</h2>
           <p>Research, persony, wireframe'y, design system i testy z użytkownikami – cały proces krok po kroku.</p>
-          <a href="case-study.html" class="btn">Czytaj case study</a>
+          <a href="case-study.html" class="btn">Czytaj case study <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
