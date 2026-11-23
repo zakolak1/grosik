@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grosik – aplikacja do nauki finansów dla młodzieży</title>
+  <meta name="description" content="Grosik – aplikacja mobilna, która uczy nastolatków zarządzania kieszonkowym, oszczędzania i podstaw ekonomii.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Kalam:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Grosik – strona główna">
+        <img src="img/logo.svg" alt="" width="56" height="46">
+        <span class="logo__text">Grosik<small>finanse bez stresu</small></span>
+      </a>
+
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">☰</button>
+
+      <nav class="nav" id="menu" aria-label="Menu główne">
+        <ul>
+          <li><a href="#o-projekcie">O projekcie</a></li>
+          <li><a href="#funkcje">Funkcje</a></li>
+          <li><a href="#jak-to-dziala">Jak to działa</a></li>
+          <li><a href="#dla-kogo">Dla kogo</a></li>
+          <li><a href="case-study.html">Case study</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <a href="#prototyp" class="btn btn--small header__login">Prototyp</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__top">
+          <p class="hero__lead">
+            Darmowa <strong>aplikacja mobilna</strong> do nauki
+            zarządzania pieniędzmi dla uczniów w wieku 13–18 lat
+            <em>Budżet – Cele – Wyzwania</em>
+          </p>
+          <div class="hero__title">
+            <h1>Poznaj Finanse</h1>
+            <p>z <span class="highlight"><strong>własnym kieszonkowym</strong></span> w roli głównej!</p>
+          </div>
+        </div>
+
+        <div class="frame hero__frame">
+          <!-- Slider z ekranami aplikacji -->
+          <div class="slider" aria-roledescription="karuzela" aria-label="Ekrany aplikacji">
+            <div class="slide">
+              <div>
+                <span class="tag">Ekran 1</span>
+                <h2>Budżet w kieszeni</h2>
+                <p>Wpisz kieszonkowe, a Grosik pokaże, ile możesz wydać w tym tygodniu, żeby starczyło do końca miesiąca.</p>
+              </div>
+              <div class="phone" aria-hidden="true">
+                <div class="phone__screen">
+                  <p>Zostało na ten tydzień</p>
+                  <p class="phone__big">48,50 zł</p>
+                  <div class="phone__bar phone__bar--fill" style="--fill: 65%"></div>
+                  <div class="phone__tile">🍔 Jedzenie – 22 zł</div>
+                  <div class="phone__tile">🎮 Rozrywka – 15 zł</div>
+                  <div class="phone__tile">🚌 Bilet – 14,50 zł</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide">
+              <div>
+                <span class="tag">Ekran 2</span>
+                <h2>Cele oszczędnościowe</h2>
+                <p>Słuchawki, wyjazd, nowy telefon? Ustal cel, a aplikacja rozbije go na małe, tygodniowe kroki.</p>
+              </div>
+              <div class="phone" aria-hidden="true">
+                <div class="phone__screen">
+                  <p>Twój cel</p>
+                  <p class="phone__big">🎧 Słuchawki</p>
+                  <p>180 / 300 zł</p>
+                  <div class="phone__bar phone__bar--fill" style="--fill: 60%"></div>
+                  <div class="phone__tile">Odkładaj 20 zł tygodniowo</div>
+                  <div class="phone__tile">Cel osiągniesz za 6 tygodni 🎉</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide">
+              <div>
+                <span class="tag">Ekran 3</span>
+                <h2>Wyzwania i quizy</h2>
+                <p>Krótkie lekcje (3 minuty!) o inflacji, procencie składanym czy reklamach. Za każdą zdobywasz odznaki.</p>
+              </div>
+              <div class="phone" aria-hidden="true">
+                <div class="phone__screen">
+                  <p>Quiz dnia</p>
+                  <p class="phone__big">Co to jest inflacja?</p>
+                  <div class="phone__tile">A. Wzrost cen w czasie</div>
+                  <div class="phone__tile">B. Rodzaj konta</div>
+                  <div class="phone__tile">C. Podatek od zakupów</div>
+                  <p>🔥 Seria: 7 dni</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider__dots"></div>
+          </div>
+
+          <!-- Prawa kolumna jak „okładki” w oryginale -->
+          <div class="grid-2">
+            <div class="card" style="padding: 1rem; text-align: center;">
+              <div class="card__icon" style="margin: 0 auto 0.5rem;">💰</div>
+              <strong>Budżet</strong>
+            </div>
+            <div class="card" style="padding: 1rem; text-align: center;">
+              <div class="card__icon" style="margin: 0 auto 0.5rem;">🎯</div>
+              <strong>Cele</strong>
+            </div>
+            <div class="card" style="padding: 1rem; text-align: center;">
+              <div class="card__icon" style="margin: 0 auto 0.5rem;">🏆</div>
+              <strong>Wyzwania</strong>
+            </div>
+            <div class="card" style="padding: 1rem; text-align: center;">
+              <div class="card__icon" style="margin: 0 auto 0.5rem;">📖</div>
+              <strong>Słownik</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="partners" aria-label="Kontekst projektu">
+          <span class="partners__item">Projekt studencki</span>
+          <span class="partners__item">UI/UX Design</span>
+          <span class="partners__item">Edukacja finansowa</span>
+          <span>Koncepcja aplikacji przygotowana w ramach zaliczenia przedmiotu. Wszystkie nazwy i dane są fikcyjne.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== O PROJEKCIE ========== -->
+    <section class="section" id="o-projekcie">
+      <div class="container about">
+        <div>
+          <h2 class="hand">O projekcie</h2>
+          <p>
+            <strong>„Grosik”</strong> to koncepcja aplikacji mobilnej, która uczy nastolatków
+            świadomego gospodarowania pieniędzmi. Z badań wynika, że większość młodych ludzi
+            dostaje kieszonkowe, ale <strong>tylko nieliczni planują, na co je wydadzą</strong>.
+            Lekcje w szkole są teoretyczne, a aplikacje bankowe – zbyt „dorosłe”.
+          </p>
+          <p>
+            Grosik łączy prosty budżet, cele oszczędnościowe i krótkie lekcje w formie gry.
+            Dlaczego <a href="case-study.html">„Grosik”</a>? Bo każda duża suma zaczyna się od jednego grosza!
+          </p>
+          <a href="case-study.html" class="btn">Sprawdź proces</a>
+        </div>
+        <div class="sketch" aria-hidden="true">
+          <img src="img/logo.svg" alt="" width="260" height="215">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FUNKCJE ========== -->
+    <section class="section section--soft" id="funkcje">
+      <div class="container">
+        <h2>Co potrafi Grosik?</h2>
+        <p>Trzy główne moduły zaprojektowane na podstawie wywiadów z uczniami i rodzicami.</p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">💰</div>
+            <h3>Budżet tygodniowy</h3>
+            <p>Kieszonkowe dzielone na tygodnie i kategorie. Zero tabelek – wszystko na kolorowych kafelkach.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🎯</div>
+            <h3>Cele i skarbonki</h3>
+            <p>Wirtualne skarbonki na konkretne marzenia z paskiem postępu i przypomnieniami.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🏆</div>
+            <h3>Wyzwania i lekcje</h3>
+            <p>3-minutowe lekcje, quizy i odznaki. Wiedza z ekonomii podana jak w grze.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== JAK TO DZIAŁA ========== -->
+    <section class="section" id="jak-to-dziala">
+      <div class="container grid-2">
+        <div>
+          <h2>Jak to działa?</h2>
+          <p>Od instalacji do pierwszego celu w mniej niż 2 minuty.</p>
+        </div>
+        <ol class="steps">
+          <li><h3>Załóż profil</h3><p>Podaj wiek i kwotę kieszonkowego. Bez podpinania konta bankowego.</p></li>
+          <li><h3>Ustal cel</h3><p>Wybierz, na co oszczędzasz – aplikacja policzy tygodniowy plan.</p></li>
+          <li><h3>Zapisuj wydatki</h3><p>Jedno kliknięcie na kafelek kategorii. Grosik pokaże, ile zostało.</p></li>
+          <li><h3>Ucz się i zdobywaj odznaki</h3><p>Codzienny quiz buduje nawyk i wiedzę o pieniądzach.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== DLA KOGO ========== -->
+    <section class="section section--soft" id="dla-kogo">
+      <div class="container">
+        <h2>Dla kogo?</h2>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Uczniowie</span>
+            <h3>13–18 lat</h3>
+            <p>Dla tych, którzy dostają kieszonkowe lub pierwsze pieniądze z pracy dorywczej.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Rodzice</span>
+            <h3>Spokój i rozmowa</h3>
+            <p>Opcjonalny podgląd celów dziecka – bez kontroli każdego wydatku.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Nauczyciele</span>
+            <h3>Gotowe wyzwania klasowe</h3>
+            <p>Wspólne wyzwania dla klasy, które uzupełniają lekcje podstaw przedsiębiorczości.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA / PROTOTYP ========== -->
+    <section class="section" id="prototyp">
+      <div class="container">
+        <div class="cta">
+          <h2>Zobacz, jak powstawał Grosik</h2>
+          <p>Research, persony, wireframe'y, design system i testy z użytkownikami – cały proces krok po kroku.</p>
+          <a href="case-study.html" class="btn">Czytaj case study</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="kontakt">
+    <div class="container grid-3">
+      <div>
+        <h3>Grosik</h3>
+        <p>Projekt aplikacji do edukacji finansowej młodzieży. Projekt studencki – UI/UX Design.</p>
+      </div>
+      <div>
+        <h3>Nawigacja</h3>
+        <ul>
+          <li><a href="#o-projekcie">O projekcie</a></li>
+          <li><a href="#funkcje">Funkcje</a></li>
+          <li><a href="case-study.html">Case study</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Autor: <!-- TODO: wpisz imię i nazwisko --> Imię Nazwisko</li>
+          <li><a href="mailto:kontakt@example.com">kontakt@example.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      © <span id="year">2026</span> Grosik – projekt edukacyjny
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

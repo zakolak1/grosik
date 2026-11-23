@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case study – Grosik | UI/UX Design</title>
+  <meta name="description" content="Case study projektu aplikacji Grosik: research, architektura informacji, design system i testy użyteczności.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Kalam:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Grosik – strona główna">
+        <img src="img/logo.svg" alt="" width="56" height="46">
+        <span class="logo__text">Grosik<small>finanse bez stresu</small></span>
+      </a>
+
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu">☰</button>
+
+      <nav class="nav" id="menu" aria-label="Menu główne">
+        <ul>
+          <li><a href="index.html">Strona główna</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#ux">UX</a></li>
+          <li><a href="#ui">UI</a></li>
+          <li><a href="#walidacja">Walidacja</a></li>
+          <li><a href="case-study.html" aria-current="page">Case study</a></li>
+        </ul>
+      </nav>
+
+      <a href="#figma" class="btn btn--small header__login">Figma</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ========== INTRO ========== -->
+    <section class="cs-hero">
+      <div class="container">
+        <span class="tag">Case study · UI/UX Design</span>
+        <h1>Grosik – od problemu do wdrożenia</h1>
+        <p>
+          Projekt aplikacji mobilnej wspierającej <strong>edukację finansową młodzieży</strong>.
+          Poniżej dokumentuję cały proces: research, architekturę informacji, design system
+          oraz testy interaktywnego prototypu.
+        </p>
+
+        <div class="cs-meta">
+          <div><strong>Rola</strong>UX/UI Designer (projekt indywidualny)</div>
+          <div><strong>Czas</strong>6 tygodni</div>
+          <div><strong>Narzędzia</strong>Figma, FigJam, Google Forms, HTML/CSS</div>
+          <div><strong>Platforma</strong>Aplikacja mobilna (iOS / Android)</div>
+        </div>
+
+        <ul class="toc" aria-label="Spis treści">
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#research">1. Research</a></li>
+          <li><a href="#ux">2. Architektura i UX</a></li>
+          <li><a href="#ui">3. UI i design system</a></li>
+          <li><a href="#walidacja">4. Walidacja</a></li>
+          <li><a href="#decyzje">Uzasadnienie decyzji</a></li>
+          <li><a href="#figma">Prototyp</a></li>
+        </ul>
+
+        <p class="note" style="margin-top: 2rem;">
+          <strong>Uwaga:</strong> dane z wywiadów, persony i wyniki testów to przykładowe treści –
+          do podmiany na wyniki własnych badań (szukaj komentarzy <code>TODO</code> w kodzie).
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== PROBLEM ========== -->
+    <section class="section" id="problem">
+      <div class="container grid-2">
+        <div>
+          <h2>Problem</h2>
+          <p>
+            Nastolatki dostają kieszonkowe, coraz częściej płacą telefonem i robią zakupy online,
+            ale <strong>nie mają narzędzia, które uczy planowania pieniędzy w ich języku</strong>.
+            Szkolne lekcje są teoretyczne, a aplikacje bankowe projektowane są dla dorosłych.
+          </p>
+          <p class="quote">„Jak młodym ludziom w wieku 13–18 lat pomóc zbudować nawyk świadomego
+            wydawania i oszczędzania pieniędzy?”</p>
+        </div>
+        <div class="card">
+          <h3>Cele projektu</h3>
+          <ul>
+            <li>Ułatwić planowanie kieszonkowego w skali tygodnia.</li>
+            <li>Zwiększyć motywację do oszczędzania na konkretny cel.</li>
+            <li>Przekazać podstawy ekonomii w krótkiej, angażującej formie.</li>
+            <li>Spełnić wymagania dostępności <strong>WCAG 2.1 AA</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 1. RESEARCH ========== -->
+    <section class="section section--soft" id="research">
+      <div class="container">
+        <span class="phase-number" aria-hidden="true">01</span>
+        <h2>Faza badawcza (Research)</h2>
+
+        <h3>Wywiady pogłębione (IDI)</h3>
+        <!-- TODO: podmień na dane z własnych wywiadów -->
+        <p>Przeprowadziłem/am <strong>5 wywiadów</strong> (30–45 min, online i na żywo): 3 z uczniami, 1 z rodzicem i 1 z nauczycielem przedsiębiorczości.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Osoba</th><th scope="col">Kluczowe wnioski</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">U1 – Kasia, 15 lat</th><td>Kieszonkowe „znika” w pierwszym tygodniu. Nie wie, na co wydała.</td></tr>
+              <tr><th scope="row">U2 – Tomek, 17 lat</th><td>Pracuje w wakacje, chce odłożyć na prawo jazdy. Excel go nudzi.</td></tr>
+              <tr><th scope="row">U3 – Ola, 13 lat</th><td>Lubi gry z odznakami. Nie rozumie słów „procent”, „oprocentowanie”.</td></tr>
+              <tr><th scope="row">R1 – mama, 44 lata</th><td>Chce uczyć dziecko odpowiedzialności, ale nie chce go „szpiegować”.</td></tr>
+              <tr><th scope="row">N1 – nauczyciel, 38 lat</th><td>Brakuje mu praktycznych zadań, które uczniowie zrobią w domu.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Persony</h3>
+        <div class="grid-3">
+          <article class="card persona">
+            <div class="persona__head">
+              <div class="avatar" aria-hidden="true">👧</div>
+              <div><h4>Kasia, 15 lat</h4><span class="tag">Wydająca spontanicznie</span></div>
+            </div>
+            <p><strong>Cele:</strong></p>
+            <ul><li>Starczyć kieszonkowym do końca miesiąca</li><li>Kupić bilet na koncert</li></ul>
+            <p><strong>Frustracje:</strong></p>
+            <ul><li>Nie pamięta wydatków</li><li>Aplikacje banku są „nudne”</li></ul>
+            <p class="quote">„Dostaję 200 zł i po tygodniu nie wiem, gdzie się podziały.”</p>
+          </article>
+          <article class="card persona">
+            <div class="persona__head">
+              <div class="avatar" aria-hidden="true">👦</div>
+              <div><h4>Tomek, 17 lat</h4><span class="tag">Ambitny oszczędzający</span></div>
+            </div>
+            <p><strong>Cele:</strong></p>
+            <ul><li>Odłożyć 2500 zł na prawo jazdy</li><li>Zrozumieć, jak działa lokata</li></ul>
+            <p><strong>Frustracje:</strong></p>
+            <ul><li>Brak motywacji w długim okresie</li><li>Arkusze kalkulacyjne</li></ul>
+            <p class="quote">„Chcę widzieć, ile mi brakuje i kiedy dam radę.”</p>
+          </article>
+          <article class="card persona">
+            <div class="persona__head">
+              <div class="avatar" aria-hidden="true">👩</div>
+              <div><h4>Anna, 44 lata</h4><span class="tag">Rodzic</span></div>
+            </div>
+            <p><strong>Cele:</strong></p>
+            <ul><li>Nauczyć dziecko odpowiedzialności</li><li>Rozmawiać o pieniądzach bez kłótni</li></ul>
+            <p><strong>Frustracje:</strong></p>
+            <ul><li>Nie chce kontrolować każdej złotówki</li><li>Brak czasu</li></ul>
+            <p class="quote">„Wolę, żeby nauczył się teraz na 50 zł niż później na kredycie.”</p>
+          </article>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Mapa podróży użytkownika (Kasia)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Etap</th>
+                <th scope="col">Dostaje kieszonkowe</th>
+                <th scope="col">Wydaje</th>
+                <th scope="col">Połowa miesiąca</th>
+                <th scope="col">Koniec miesiąca</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Działania</th><td>Odbiera 200 zł na konto</td><td>Jedzenie, kino, gry</td><td>Sprawdza saldo</td><td>Prosi rodziców o więcej</td></tr>
+              <tr><th scope="row">Myśli</th><td>„Ale dużo!”</td><td>„To tylko 10 zł”</td><td>„Gdzie to zniknęło?”</td><td>„Znowu to samo…”</td></tr>
+              <tr><th scope="row">Emocje</th><td>😀</td><td>🙂</td><td>😟</td><td>😞</td></tr>
+              <tr><th scope="row">Szansa dla produktu</th><td>Plan tygodniowy</td><td>Szybkie dodanie wydatku</td><td>Ostrzeżenie o tempie</td><td>Podsumowanie + wskazówka</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Analiza konkurencji (benchmark)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Rozwiązanie</th><th scope="col">Mocne strony</th><th scope="col">Słabe strony</th><th scope="col">Wniosek dla Grosika</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Konta bankowe dla dzieci</th><td>Prawdziwe pieniądze, kontrola rodzica</td><td>Brak edukacji, interfejs „dla dorosłych”</td><td>Nie konkurować z bankiem – działać bez podpinania konta</td></tr>
+              <tr><th scope="row">Aplikacje budżetowe dla dorosłych</th><td>Rozbudowane statystyki</td><td>Za skomplikowane dla 13-latka</td><td>Maks. 5 kategorii, kafelki zamiast tabel</td></tr>
+              <tr><th scope="row">Aplikacje do nauki języków (grywalizacja)</th><td>Serie dni, odznaki, krótkie lekcje</td><td>Brak treści finansowych</td><td>Przenieść mechanikę serii i 3-minutowe lekcje</td></tr>
+              <tr><th scope="row">Materiały szkolne</th><td>Rzetelna wiedza</td><td>Teoria, brak praktyki</td><td>Wyzwania klasowe dla nauczycieli</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 2. UX ========== -->
+    <section class="section" id="ux">
+      <div class="container">
+        <span class="phase-number" aria-hidden="true">02</span>
+        <h2>Architektura i koncepcja (UX)</h2>
+
+        <div class="grid-2">
+          <div>
+            <h3>Drzewo serwisu</h3>
+            <ul class="tree">
+              <li>Grosik
+                <ul>
+                  <li>Onboarding
+                    <ul><li>Wiek i kieszonkowe</li><li>Pierwszy cel</li></ul>
+                  </li>
+                  <li>Budżet (ekran główny)
+                    <ul><li>Dodaj wydatek</li><li>Kategorie</li><li>Historia</li></ul>
+                  </li>
+                  <li>Cele
+                    <ul><li>Nowy cel</li><li>Szczegóły celu</li></ul>
+                  </li>
+                  <li>Wyzwania
+                    <ul><li>Quiz dnia</li><li>Lekcje</li><li>Odznaki</li><li>Słownik pojęć</li></ul>
+                  </li>
+                  <li>Profil
+                    <ul><li>Połączenie z rodzicem</li><li>Ustawienia i dostępność</li></ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Przepływy użytkownika (User flows)</h3>
+            <p><strong>Flow 1: Dodanie wydatku</strong></p>
+            <ol class="flow">
+              <li>Ekran główny</li>
+              <li>Przycisk „+”</li>
+              <li>Kategoria</li>
+              <li>Kwota</li>
+              <li class="flow__decision">Przekroczono limit?</li>
+              <li>Podsumowanie</li>
+            </ol>
+            <p style="margin-top: 1.5rem;"><strong>Flow 2: Utworzenie celu</strong></p>
+            <ol class="flow">
+              <li>Zakładka Cele</li>
+              <li>Nowy cel</li>
+              <li>Nazwa + kwota</li>
+              <li>Termin</li>
+              <li class="flow__decision">Realny plan?</li>
+              <li>Cel zapisany 🎉</li>
+            </ol>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Ramka przerywana = punkt decyzyjny.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Wireframe'y (low-fi)</h3>
+        <!-- TODO: można tu wstawić zrzuty z Figmy: <img src="img/wireframe-1.png" alt="..."> -->
+        <div class="grid-4">
+          <figure style="margin:0">
+            <div class="wire" aria-hidden="true">
+              <div class="wire__box wire__box--s"></div>
+              <div class="wire__box wire__box--l"></div>
+              <div class="wire__box"></div><div class="wire__box"></div><div class="wire__box"></div>
+            </div>
+            <figcaption class="wire__caption">Budżet</figcaption>
+          </figure>
+          <figure style="margin:0">
+            <div class="wire" aria-hidden="true">
+              <div class="wire__box wire__box--s"></div>
+              <div class="wire__box wire__box--m"></div><div class="wire__box wire__box--m"></div><div class="wire__box wire__box--m"></div>
+            </div>
+            <figcaption class="wire__caption">Dodaj wydatek</figcaption>
+          </figure>
+          <figure style="margin:0">
+            <div class="wire" aria-hidden="true">
+              <div class="wire__box wire__box--s"></div>
+              <div class="wire__box wire__box--l"></div>
+              <div class="wire__box"></div><div class="wire__box wire__box--s"></div>
+            </div>
+            <figcaption class="wire__caption">Cel</figcaption>
+          </figure>
+          <figure style="margin:0">
+            <div class="wire" aria-hidden="true">
+              <div class="wire__box wire__box--m"></div>
+              <div class="wire__box"></div><div class="wire__box"></div><div class="wire__box"></div>
+            </div>
+            <figcaption class="wire__caption">Quiz</figcaption>
+          </figure>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Wstępne testy makiet</h3>
+        <p>Test „na papierze” wireframe'ów z 3 uczniami (zadanie: dodaj wydatek, utwórz cel).</p>
+        <ul>
+          <li>2/3 osób nie znalazło przycisku dodawania – <strong>zmiana:</strong> duży pływający przycisk „+”.</li>
+          <li>Słowo „Saldo” było niezrozumiałe – <strong>zmiana:</strong> „Zostało na ten tydzień”.</li>
+          <li>Zakładka „Edukacja” brzmiała jak szkoła – <strong>zmiana:</strong> „Wyzwania”.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 3. UI ========== -->
+    <section class="section section--soft" id="ui">
+      <div class="container">
+        <span class="phase-number" aria-hidden="true">03</span>
+        <h2>Kreacja i UI Design</h2>
+
+        <h3>Paleta kolorów i kontrast (WCAG 2.1 AA)</h3>
+        <p>Każdy kolor tekstu ma kontrast min. <strong>4.5:1</strong> na białym tle. Jasny turkus służy tylko do dekoracji.</p>
+        <div class="grid-4">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #1b2a6b"></div>
+            <div class="swatch__info"><strong>Navy #1B2A6B</strong>Nagłówki, przyciski · 13.2:1 ✅</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #127680"></div>
+            <div class="swatch__info"><strong>Teal #127680</strong>Linki, akcenty · 5.4:1 ✅</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #d62828"></div>
+            <div class="swatch__info"><strong>Red #D62828</strong>Wyróżnienia, focus · 5.0:1 ✅</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #5bbfc9"></div>
+            <div class="swatch__info"><strong>Teal light #5BBFC9</strong>Tylko dekoracje · 2.2:1 ⚠️</div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+          <div class="card">
+            <h3>Typografia</h3>
+            <p style="font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--navy); margin: 0;">Poppins 800</p>
+            <p>Nagłówki – geometryczny, nowoczesny, czytelny.</p>
+            <p style="font-size: 1.2rem; margin: 0;">Fira Sans 400 / 600</p>
+            <p>Tekst główny – min. 16 px, interlinia 1.65.</p>
+            <p class="hand" style="font-size: 1.6rem; color: var(--navy); margin: 0;">Kalam</p>
+            <p>Akcenty „odręczne” – tylko krótkie tytuły.</p>
+          </div>
+          <div class="card">
+            <h3>Tokeny</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th scope="col">Token</th><th scope="col">Wartość</th></tr></thead>
+                <tbody>
+                  <tr><td><code>--space-s / m / l</code></td><td>16 / 32 / 64 px</td></tr>
+                  <tr><td><code>--radius</code></td><td>12 px</td></tr>
+                  <tr><td><code>--radius-pill</code></td><td>999 px (przyciski)</td></tr>
+                  <tr><td><code>--shadow</code></td><td>0 6 20 navy / 12%</td></tr>
+                  <tr><td>Cel dotykowy</td><td>min. 44 × 44 px</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Komponenty</h3>
+        <div class="card" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+          <a href="#ui" class="btn">Przycisk główny</a>
+          <a href="#ui" class="btn btn--outline">Przycisk drugorzędny</a>
+          <span class="tag">Etykieta</span>
+          <div style="width: 200px;">
+            <div class="phone__bar phone__bar--fill" style="--fill: 70%"></div>
+            <small>Pasek postępu celu</small>
+          </div>
+          <div class="card__icon" aria-hidden="true">🎯</div>
+        </div>
+        <ul style="margin-top: 1rem;">
+          <li>Wszystkie elementy interaktywne mają widoczny stan <strong>focus</strong> (czerwona obwódka).</li>
+          <li>Ikony zawsze z podpisem – kolor nie jest jedynym nośnikiem informacji.</li>
+          <li>Obsługa <code>prefers-reduced-motion</code> – animacje wyłączają się na życzenie systemu.</li>
+        </ul>
+
+        <h3 style="margin-top: 2rem;">Ekrany high-fi</h3>
+        <!-- TODO: wstaw eksporty z Figmy, np. <img src="img/hifi-budzet.png" alt="Ekran budżetu..."> -->
+        <div class="grid-3">
+          <div class="phone" aria-label="Ekran budżetu" role="img">
+            <div class="phone__screen">
+              <p>Zostało na ten tydzień</p>
+              <p class="phone__big">48,50 zł</p>
+              <div class="phone__bar phone__bar--fill" style="--fill: 65%"></div>
+              <div class="phone__tile">🍔 Jedzenie – 22 zł</div>
+              <div class="phone__tile">🎮 Rozrywka – 15 zł</div>
+            </div>
+          </div>
+          <div class="phone" aria-label="Ekran celu oszczędnościowego" role="img">
+            <div class="phone__screen">
+              <p>Twój cel</p>
+              <p class="phone__big">🎧 Słuchawki</p>
+              <div class="phone__bar phone__bar--fill" style="--fill: 60%"></div>
+              <div class="phone__tile">Odkładaj 20 zł / tydz.</div>
+            </div>
+          </div>
+          <div class="phone" aria-label="Ekran quizu dnia" role="img">
+            <div class="phone__screen">
+              <p>Quiz dnia</p>
+              <p class="phone__big">Co to jest inflacja?</p>
+              <div class="phone__tile">A. Wzrost cen w czasie</div>
+              <div class="phone__tile">B. Rodzaj konta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. WALIDACJA ========== -->
+    <section class="section" id="walidacja">
+      <div class="container">
+        <span class="phase-number" aria-hidden="true">04</span>
+        <h2>Walidacja</h2>
+        <!-- TODO: podmień na wyniki własnych testów -->
+        <p>Interaktywny prototyp w Figmie przetestowałem/am z <strong>4 nowymi osobami</strong> (13, 15, 16 i 18 lat), które nie brały udziału w wywiadach. Metoda: moderowany test zadaniowy + „thinking aloud”.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="result"><span class="result__num">4/4</span><span>ukończyło dodanie wydatku</span></div>
+            <p><strong>H1 potwierdzona:</strong> „Dodanie wydatku zajmie mniej niż 15 s.” Średnio: 9 s.</p>
+          </div>
+          <div class="card">
+            <div class="result"><span class="result__num">3/4</span><span>utworzyło cel bez pomocy</span></div>
+            <p><strong>H2 częściowo:</strong> wybór terminu z kalendarza był kłopotliwy.</p>
+          </div>
+          <div class="card">
+            <div class="result"><span class="result__num">4/4</span><span>chce korzystać dalej</span></div>
+            <p><strong>H3 potwierdzona:</strong> „Odznaki zachęcą do codziennego wejścia.”</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Wnioski i iteracje</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Problem</th><th scope="col">Iteracja</th></tr></thead>
+            <tbody>
+              <tr><td>Kalendarz przy celu był zbyt „dorosły”.</td><td>Zamiana na wybór: „za miesiąc / 3 miesiące / pół roku”.</td></tr>
+              <tr><td>Nie było jasne, czy rodzic widzi wydatki.</td><td>Dodano ekran „Co widzi rodzic” w onboardingu.</td></tr>
+              <tr><td>Za mały kontrast szarych podpisów.</td><td>Zmiana koloru tekstu pomocniczego na #4A4A55 (8.9:1).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DECYZJE ========== -->
+    <section class="section section--soft" id="decyzje">
+      <div class="container grid-2">
+        <div class="card">
+          <h3>Uzasadnienie biznesowe</h3>
+          <ul>
+            <li><strong>Model:</strong> darmowa dla ucznia; finansowanie z grantów edukacyjnych i licencji dla szkół (panel nauczyciela).</li>
+            <li><strong>Brak podpinania konta</strong> – niższy próg wejścia i brak wymagań regulacyjnych dla usług płatniczych.</li>
+            <li><strong>Grywalizacja</strong> zwiększa retencję – kluczowy wskaźnik dla aplikacji edukacyjnych.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Uzasadnienie technologiczne</h3>
+          <ul>
+            <li><strong>Aplikacja mobilna</strong> – telefon to główne urządzenie nastolatków.</li>
+            <li><strong>Framework wieloplatformowy</strong> (np. Flutter / React Native) – jeden kod na iOS i Android.</li>
+            <li><strong>Dane lokalnie na urządzeniu</strong> – mniej danych osobowych nieletnich na serwerze (RODO).</li>
+            <li>Ta strona: czysty HTML/CSS/JS na GitHub Pages – darmowy hosting i kontrola wersji.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FIGMA ========== -->
+    <section class="section" id="figma">
+      <div class="container">
+        <div class="cta">
+          <h2>Interaktywny prototyp</h2>
+          <p>Klikalna wersja aplikacji przygotowana w Figmie.</p>
+          <!-- TODO: wklej link do swojego prototypu w Figmie -->
+          <a href="https://www.figma.com/" class="btn" target="_blank" rel="noopener">Otwórz w Figmie</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container grid-3">
+      <div>
+        <h3>Grosik</h3>
+        <p>Projekt aplikacji do edukacji finansowej młodzieży. Projekt studencki – UI/UX Design.</p>
+      </div>
+      <div>
+        <h3>Nawigacja</h3>
+        <ul>
+          <li><a href="index.html">Strona główna</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#walidacja">Walidacja</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Autor: <!-- TODO: wpisz imię i nazwisko --> Imię Nazwisko</li>
+          <li><a href="mailto:kontakt@example.com">kontakt@example.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      © <span id="year">2026</span> Grosik – projekt edukacyjny
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
