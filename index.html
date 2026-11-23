@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <!-- Zestaw ikon SVG (styl liniowy, 24×24, stroke 2) – używane przez <use href="#..."> -->
@@ -27,6 +28,8 @@
     <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
     <symbol id="i-school" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/><path d="M19 17v4M17 19h4"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9z"/></symbol>
@@ -39,7 +42,7 @@
   <header class="header">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="Grosik – strona główna">
-        <img src="img/logo.svg" alt="" width="56" height="46">
+        <img src="img/logo.svg" alt="" width="52" height="43">
         <span class="logo__text">Grosik<small>finanse bez stresu</small></span>
       </a>
 
@@ -64,132 +67,159 @@
   <main id="main">
     <!-- ========== HERO ========== -->
     <section class="hero">
-      <div class="container">
-        <div class="hero__top">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkle"/></svg>Projekt UI/UX · Edukacja finansowa</span>
+          <h1 class="hero__title">Poznaj <span class="gradient-text">Finanse</span></h1>
+          <p class="hero__sub">z <strong class="highlight">własnym kieszonkowym</strong> w roli głównej!</p>
           <p class="hero__lead">
-            Darmowa <strong>aplikacja mobilna</strong> do nauki
-            zarządzania pieniędzmi dla uczniów w wieku 13–18 lat
-            <em>Budżet – Cele – Wyzwania</em>
+            Darmowa aplikacja mobilna dla uczniów w wieku 13–18 lat.
+            Budżet, cele oszczędnościowe i krótkie wyzwania – wszystko w jednym miejscu.
           </p>
-          <div class="hero__title">
-            <h1>Poznaj Finanse</h1>
-            <p>z <span class="highlight"><strong>własnym kieszonkowym</strong></span> w roli głównej!</p>
+          <div class="hero__actions">
+            <a href="case-study.html" class="btn">Zobacz case study <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="#jak-to-dziala" class="btn btn--ghost">Jak to działa</a>
+          </div>
+          <ul class="stats">
+            <li><strong>13–18</strong><span>lat – grupa docelowa</span></li>
+            <li><strong>3 min</strong><span>trwa jedna lekcja</span></li>
+            <li><strong>0 zł</strong><span>dla ucznia</span></li>
+          </ul>
+        </div>
+
+        <!-- Telefon ze sliderem ekranów -->
+        <section class="showcase slider" aria-roledescription="karuzela" aria-label="Ekrany aplikacji">
+          <div class="showcase__stage">
+            <div class="phone">
+              <div class="slide" aria-roledescription="slajd" aria-label="1 z 3"
+                   data-title="Budżet w kieszeni" data-text="Ile możesz wydać w tym tygodniu, żeby starczyło do końca miesiąca.">
+                <div class="phone__screen">
+                  <div class="screen__header">
+                    <small>Zostało na ten tydzień</small>
+                    <p class="screen__big">48,50 zł</p>
+                    <div class="progress" style="--fill: 65%"></div>
+                    <small>Wykorzystano 65% budżetu</small>
+                  </div>
+                  <div class="screen__body">
+                    <p class="screen__label">Ostatnie wydatki</p>
+                    <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-utensils"/></svg></span>Jedzenie<b>22 zł</b></div>
+                    <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-gamepad"/></svg></span>Rozrywka<b>15 zł</b></div>
+                    <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"/></svg></span>Bilet<b>14,50 zł</b></div>
+                  </div>
+                  <div class="phone__tabbar" aria-hidden="true">
+                    <svg class="icon is-active"><use href="#i-wallet"/></svg>
+                    <svg class="icon"><use href="#i-target"/></svg>
+                    <svg class="icon"><use href="#i-trophy"/></svg>
+                    <svg class="icon"><use href="#i-user"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slide" aria-roledescription="slajd" aria-label="2 z 3"
+                   data-title="Cele oszczędnościowe" data-text="Duży cel rozbity na małe, tygodniowe kroki.">
+                <div class="phone__screen">
+                  <div class="screen__header">
+                    <small>Twój cel</small>
+                    <p class="screen__big"><svg class="icon" aria-hidden="true"><use href="#i-headphones"/></svg>Słuchawki</p>
+                    <div class="progress" style="--fill: 60%"></div>
+                    <small>180 z 300 zł</small>
+                  </div>
+                  <div class="screen__body">
+                    <p class="screen__label">Plan</p>
+                    <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trend"/></svg></span>Odkładaj<b>20 zł / tydz.</b></div>
+                    <div class="phone__tile phone__tile--correct">Cel osiągniesz za 6 tygodni<svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></div>
+                  </div>
+                  <div class="phone__tabbar" aria-hidden="true">
+                    <svg class="icon"><use href="#i-wallet"/></svg>
+                    <svg class="icon is-active"><use href="#i-target"/></svg>
+                    <svg class="icon"><use href="#i-trophy"/></svg>
+                    <svg class="icon"><use href="#i-user"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slide" aria-roledescription="slajd" aria-label="3 z 3"
+                   data-title="Wyzwania i quizy" data-text="3-minutowe lekcje o inflacji, procentach i reklamach. Za każdą – odznaka.">
+                <div class="phone__screen">
+                  <div class="screen__header">
+                    <small>Quiz dnia</small>
+                    <p class="screen__big">Co to jest inflacja?</p>
+                  </div>
+                  <div class="screen__body">
+                    <div class="phone__tile phone__tile--correct">A. Wzrost cen w czasie<svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></div>
+                    <div class="phone__tile">B. Rodzaj konta</div>
+                    <div class="phone__tile">C. Podatek od zakupów</div>
+                    <p class="phone__streak"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-flame"/></svg>Seria: 7 dni</p>
+                  </div>
+                  <div class="phone__tabbar" aria-hidden="true">
+                    <svg class="icon"><use href="#i-wallet"/></svg>
+                    <svg class="icon"><use href="#i-target"/></svg>
+                    <svg class="icon is-active"><use href="#i-trophy"/></svg>
+                    <svg class="icon"><use href="#i-user"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-badge float-badge--top" aria-hidden="true">
+              <span class="icon-badge icon-badge--green"><svg class="icon icon--sm"><use href="#i-check"/></svg></span>
+              <div><strong>+20 zł</strong>odłożone na cel</div>
+            </div>
+            <div class="float-badge float-badge--bottom" aria-hidden="true">
+              <span class="icon-badge icon-badge--red"><svg class="icon icon--sm"><use href="#i-flame"/></svg></span>
+              <div><strong>7 dni</strong>seria nauki</div>
+            </div>
+          </div>
+
+          <p class="slider__caption"></p>
+          <div class="slider__controls">
+            <button class="slider__pause" type="button" aria-pressed="false" aria-label="Zatrzymaj automatyczne przewijanie">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-pause"/></svg>
+            </button>
+            <div class="slider__dots"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="container">
+        <div class="modules">
+          <div class="card card--hover module reveal">
+            <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+            <div><strong>Budżet</strong><span>tydzień po tygodniu</span></div>
+          </div>
+          <div class="card card--hover module reveal">
+            <span class="icon-badge icon-badge--red"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
+            <div><strong>Cele</strong><span>wirtualne skarbonki</span></div>
+          </div>
+          <div class="card card--hover module reveal">
+            <span class="icon-badge icon-badge--teal"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+            <div><strong>Wyzwania</strong><span>quizy i odznaki</span></div>
+          </div>
+          <div class="card card--hover module reveal">
+            <span class="icon-badge icon-badge--green"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>
+            <div><strong>Słownik</strong><span>pojęcia bez stresu</span></div>
           </div>
         </div>
-
-        <div class="frame hero__frame">
-          <!-- Slider z ekranami aplikacji -->
-          <section class="slider" aria-roledescription="karuzela" aria-label="Ekrany aplikacji">
-            <div class="slide" aria-roledescription="slajd" aria-label="1 z 3">
-              <div>
-                <span class="tag">Ekran 1</span>
-                <h2>Budżet w kieszeni</h2>
-                <p>Wpisz kieszonkowe, a Grosik pokaże, ile możesz wydać w tym tygodniu, żeby starczyło do końca miesiąca.</p>
-              </div>
-              <div class="phone" aria-hidden="true">
-                <div class="phone__screen">
-                  <p>Zostało na ten tydzień</p>
-                  <p class="phone__big">48,50 zł</p>
-                  <div class="phone__bar" style="--fill: 65%"></div>
-                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-utensils"/></svg>Jedzenie – 22 zł</div>
-                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-gamepad"/></svg>Rozrywka – 15 zł</div>
-                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-bus"/></svg>Bilet – 14,50 zł</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="slide" aria-roledescription="slajd" aria-label="2 z 3">
-              <div>
-                <span class="tag">Ekran 2</span>
-                <h2>Cele oszczędnościowe</h2>
-                <p>Słuchawki, wyjazd, nowy telefon? Ustal cel, a aplikacja rozbije go na małe, tygodniowe kroki.</p>
-              </div>
-              <div class="phone" aria-hidden="true">
-                <div class="phone__screen">
-                  <p>Twój cel</p>
-                  <p class="phone__big"><svg class="icon"><use href="#i-headphones"/></svg>Słuchawki</p>
-                  <p>180 / 300 zł</p>
-                  <div class="phone__bar" style="--fill: 60%"></div>
-                  <div class="phone__tile">Odkładaj 20 zł tygodniowo</div>
-                  <div class="phone__tile"><svg class="icon icon--sm"><use href="#i-check"/></svg>Cel za 6 tygodni</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="slide" aria-roledescription="slajd" aria-label="3 z 3">
-              <div>
-                <span class="tag">Ekran 3</span>
-                <h2>Wyzwania i quizy</h2>
-                <p>Krótkie lekcje (3 minuty!) o inflacji, procencie składanym czy reklamach. Za każdą zdobywasz odznaki.</p>
-              </div>
-              <div class="phone" aria-hidden="true">
-                <div class="phone__screen">
-                  <p>Quiz dnia</p>
-                  <p class="phone__big">Co to jest inflacja?</p>
-                  <div class="phone__tile">A. Wzrost cen w czasie</div>
-                  <div class="phone__tile">B. Rodzaj konta</div>
-                  <div class="phone__tile">C. Podatek od zakupów</div>
-                  <p class="phone__streak"><svg class="icon icon--sm"><use href="#i-flame"/></svg>Seria: 7 dni</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="slider__controls">
-              <button class="slider__pause" type="button" aria-pressed="false" aria-label="Zatrzymaj automatyczne przewijanie">
-                <svg class="icon icon--sm" aria-hidden="true"><use href="#i-pause"/></svg>
-              </button>
-              <div class="slider__dots"></div>
-            </div>
-          </section>
-
-          <!-- Prawa kolumna – moduły aplikacji -->
-          <div class="grid-2">
-            <div class="card mini-card">
-              <span class="card__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-wallet"/></svg></span>
-              Budżet
-            </div>
-            <div class="card mini-card">
-              <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
-              Cele
-            </div>
-            <div class="card mini-card">
-              <span class="card__icon card__icon--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-trophy"/></svg></span>
-              Wyzwania
-            </div>
-            <div class="card mini-card">
-              <span class="card__icon card__icon--green"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-book"/></svg></span>
-              Słownik
-            </div>
-          </div>
-        </div>
-
-        <div class="partners" aria-label="Kontekst projektu">
-          <span class="partners__item">Projekt studencki</span>
-          <span class="partners__item">UI/UX Design</span>
-          <span class="partners__item">Edukacja finansowa</span>
-          <span>Koncepcja aplikacji przygotowana w ramach zaliczenia przedmiotu. Wszystkie nazwy i dane są fikcyjne.</span>
-        </div>
+        <p class="hero__note">Koncepcja aplikacji przygotowana w ramach zaliczenia przedmiotu UI/UX Design. Wszystkie nazwy i dane są fikcyjne.</p>
       </div>
     </section>
 
     <!-- ========== O PROJEKCIE ========== -->
     <section class="section" id="o-projekcie">
       <div class="container about">
-        <div>
-          <h2>O projekcie</h2>
+        <div class="reveal">
+          <span class="eyebrow">O projekcie</span>
+          <h2>Każda duża suma zaczyna się od <span class="gradient-text">jednego grosza</span></h2>
           <p>
             <strong>„Grosik”</strong> to koncepcja aplikacji mobilnej, która uczy nastolatków
-            świadomego gospodarowania pieniędzmi. Z badań wynika, że większość młodych ludzi
-            dostaje kieszonkowe, ale <strong>tylko nieliczni planują, na co je wydadzą</strong>.
+            świadomego gospodarowania pieniędzmi. Większość młodych ludzi dostaje kieszonkowe,
+            ale <strong>tylko nieliczni planują, na co je wydadzą</strong>.
             Lekcje w szkole są teoretyczne, a aplikacje bankowe – zbyt „dorosłe”.
           </p>
-          <p>
-            Grosik łączy prosty budżet, cele oszczędnościowe i krótkie lekcje w formie gry.
-            Dlaczego „Grosik”? Bo każda duża suma zaczyna się od jednego grosza!
-          </p>
+          <p>Grosik łączy prosty budżet, cele oszczędnościowe i krótkie lekcje w formie gry.</p>
           <a href="case-study.html" class="btn">Sprawdź proces <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <div class="sketch" aria-hidden="true">
+        <div class="about__visual reveal" aria-hidden="true">
           <img src="img/logo.svg" alt="" width="260" height="215">
         </div>
       </div>
@@ -198,21 +228,24 @@
     <!-- ========== FUNKCJE ========== -->
     <section class="section section--soft" id="funkcje">
       <div class="container">
-        <h2>Co potrafi Grosik?</h2>
-        <p>Trzy główne moduły zaprojektowane na podstawie wywiadów z uczniami i rodzicami.</p>
+        <div class="section__head reveal">
+          <span class="eyebrow">Funkcje</span>
+          <h2>Co potrafi Grosik?</h2>
+          <p>Trzy główne moduły zaprojektowane na podstawie wywiadów z uczniami i rodzicami.</p>
+        </div>
         <div class="grid-3">
-          <article class="card">
-            <span class="card__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+          <article class="card card--hover card--accent reveal">
+            <span class="icon-badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-wallet"/></svg></span>
             <h3>Budżet tygodniowy</h3>
-            <p>Kieszonkowe dzielone na tygodnie i kategorie. Zero tabelek – wszystko na kolorowych kafelkach.</p>
+            <p>Kieszonkowe dzielone na tygodnie i kategorie. Zero tabelek – wszystko na czytelnych kafelkach.</p>
           </article>
-          <article class="card">
-            <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
+          <article class="card card--hover card--accent reveal">
+            <span class="icon-badge icon-badge--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
             <h3>Cele i skarbonki</h3>
             <p>Wirtualne skarbonki na konkretne marzenia z paskiem postępu i przypomnieniami.</p>
           </article>
-          <article class="card">
-            <span class="card__icon card__icon--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+          <article class="card card--hover card--accent reveal">
+            <span class="icon-badge icon-badge--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-trophy"/></svg></span>
             <h3>Wyzwania i lekcje</h3>
             <p>3-minutowe lekcje, quizy i odznaki. Wiedza z ekonomii podana jak w grze.</p>
           </article>
@@ -222,16 +255,16 @@
 
     <!-- ========== JAK TO DZIAŁA ========== -->
     <section class="section" id="jak-to-dziala">
-      <div class="container grid-2">
-        <div>
-          <h2>Jak to działa?</h2>
-          <p>Od instalacji do pierwszego celu w mniej niż 2 minuty.</p>
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Jak to działa</span>
+          <h2>Od instalacji do pierwszego celu w 2 minuty</h2>
         </div>
-        <ol class="steps">
+        <ol class="steps reveal">
           <li><h3>Załóż profil</h3><p>Podaj wiek i kwotę kieszonkowego. Bez podpinania konta bankowego.</p></li>
           <li><h3>Ustal cel</h3><p>Wybierz, na co oszczędzasz – aplikacja policzy tygodniowy plan.</p></li>
           <li><h3>Zapisuj wydatki</h3><p>Jedno kliknięcie na kafelek kategorii. Grosik pokaże, ile zostało.</p></li>
-          <li><h3>Ucz się i zdobywaj odznaki</h3><p>Codzienny quiz buduje nawyk i wiedzę o pieniądzach.</p></li>
+          <li><h3>Zdobywaj odznaki</h3><p>Codzienny quiz buduje nawyk i wiedzę o pieniądzach.</p></li>
         </ol>
       </div>
     </section>
@@ -239,24 +272,27 @@
     <!-- ========== DLA KOGO ========== -->
     <section class="section section--soft" id="dla-kogo">
       <div class="container">
-        <h2>Dla kogo?</h2>
+        <div class="section__head reveal">
+          <span class="eyebrow">Dla kogo</span>
+          <h2>Jedna aplikacja, trzy perspektywy</h2>
+        </div>
         <div class="grid-3">
-          <article class="card">
-            <span class="card__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></span>
+          <article class="card card--hover reveal">
+            <span class="icon-badge"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></span>
             <span class="tag">Uczniowie</span>
             <h3>13–18 lat</h3>
             <p>Dla tych, którzy dostają kieszonkowe lub pierwsze pieniądze z pracy dorywczej.</p>
           </article>
-          <article class="card">
-            <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-users"/></svg></span>
+          <article class="card card--hover reveal">
+            <span class="icon-badge icon-badge--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-users"/></svg></span>
             <span class="tag">Rodzice</span>
             <h3>Spokój i rozmowa</h3>
             <p>Opcjonalny podgląd celów dziecka – bez kontroli każdego wydatku.</p>
           </article>
-          <article class="card">
-            <span class="card__icon card__icon--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-school"/></svg></span>
+          <article class="card card--hover reveal">
+            <span class="icon-badge icon-badge--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-school"/></svg></span>
             <span class="tag">Nauczyciele</span>
-            <h3>Gotowe wyzwania klasowe</h3>
+            <h3>Wyzwania klasowe</h3>
             <p>Wspólne wyzwania dla klasy, które uzupełniają lekcje podstaw przedsiębiorczości.</p>
           </article>
         </div>
@@ -266,10 +302,10 @@
     <!-- ========== CTA ========== -->
     <section class="section">
       <div class="container">
-        <div class="cta">
+        <div class="cta reveal">
           <h2>Zobacz, jak powstawał Grosik</h2>
           <p>Research, persony, wireframe'y, design system i testy z użytkownikami – cały proces krok po kroku.</p>
-          <a href="case-study.html" class="btn">Czytaj case study <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="case-study.html" class="btn btn--light">Czytaj case study <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>

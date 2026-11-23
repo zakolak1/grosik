@@ -10,15 +10,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <!-- Zestaw ikon SVG (styl liniowy, 24×24, stroke 2) -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
     <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
     <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
     <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><rect x="2" y="6" width="20" height="12" rx="2"/></symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 19v2M16 19v2"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></symbol>
     <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
     <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
@@ -26,6 +31,7 @@
     <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></symbol>
     <symbol id="i-meh" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 15h8M9 9h.01M15 9h.01"/></symbol>
     <symbol id="i-frown" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/><path d="M19 17v4M17 19h4"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
   </svg>
@@ -36,7 +42,7 @@
   <header class="header">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="Grosik – strona główna">
-        <img src="img/logo.svg" alt="" width="56" height="46">
+        <img src="img/logo.svg" alt="" width="52" height="43">
         <span class="logo__text">Grosik<small>finanse bez stresu</small></span>
       </a>
 
@@ -62,8 +68,8 @@
     <!-- ========== INTRO ========== -->
     <section class="cs-hero">
       <div class="container">
-        <span class="tag">Case study · UI/UX Design</span>
-        <h1>Grosik – od problemu do wdrożenia</h1>
+        <span class="eyebrow"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkle"/></svg>Case study · UI/UX Design</span>
+        <h1>Grosik – od problemu <span class="gradient-text">do wdrożenia</span></h1>
         <p>
           Projekt aplikacji mobilnej wspierającej <strong>edukację finansową młodzieży</strong>.
           Poniżej dokumentuję cały proces: research, architekturę informacji, design system
@@ -96,8 +102,9 @@
     <!-- ========== PROBLEM ========== -->
     <section class="section" id="problem">
       <div class="container grid-2">
-        <div>
-          <h2>Problem</h2>
+        <div class="reveal">
+          <span class="eyebrow">Problem</span>
+          <h2>Kieszonkowe jest. Planu – brak.</h2>
           <p>
             Nastolatki dostają kieszonkowe, coraz częściej płacą telefonem i robią zakupy online,
             ale <strong>nie mają narzędzia, które uczy planowania pieniędzy w ich języku</strong>.
@@ -106,7 +113,8 @@
           <p class="quote">„Jak młodym ludziom w wieku 13–18 lat pomóc zbudować nawyk świadomego
             wydawania i oszczędzania pieniędzy?”</p>
         </div>
-        <div class="card">
+        <div class="card card--accent reveal">
+          <span class="icon-badge icon-badge--red"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
           <h3>Cele projektu</h3>
           <ul class="icon-list">
             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Ułatwić planowanie kieszonkowego w skali tygodnia.</li>
@@ -121,13 +129,15 @@
     <!-- ========== 1. RESEARCH ========== -->
     <section class="section section--soft" id="research">
       <div class="container">
-        <span class="phase-number" aria-hidden="true">01</span>
-        <h2>Faza badawcza (Research)</h2>
+        <div class="phase-head reveal">
+          <span class="phase-number" aria-hidden="true">01</span>
+          <h2>Faza badawcza (Research)</h2>
+        </div>
 
         <h3>Wywiady pogłębione (IDI)</h3>
         <!-- TODO: podmień na dane z własnych wywiadów -->
         <p>Przeprowadziłem/am <strong>5 wywiadów</strong> (30–45 min, online i na żywo): 3 z uczniami, 1 z rodzicem i 1 z nauczycielem przedsiębiorczości.</p>
-        <div class="table-wrap">
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr><th scope="col">Osoba</th><th scope="col">Kluczowe wnioski</th></tr>
@@ -144,7 +154,7 @@
 
         <h3 class="mt-m">Persony</h3>
         <div class="grid-3">
-          <article class="card persona">
+          <article class="card card--accent persona reveal">
             <div class="persona__head">
               <div class="avatar"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></div>
               <div><h4>Kasia, 15 lat</h4><span class="tag">Wydająca spontanicznie</span></div>
@@ -155,9 +165,9 @@
             <ul><li>Nie pamięta wydatków</li><li>Aplikacje banku są „nudne”</li></ul>
             <p class="quote">„Dostaję 200 zł i po tygodniu nie wiem, gdzie się podziały.”</p>
           </article>
-          <article class="card persona">
+          <article class="card card--accent persona reveal">
             <div class="persona__head">
-              <div class="avatar"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></div>
+              <div class="avatar avatar--teal"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-user"/></svg></div>
               <div><h4>Tomek, 17 lat</h4><span class="tag">Ambitny oszczędzający</span></div>
             </div>
             <p><strong>Cele:</strong></p>
@@ -166,9 +176,9 @@
             <ul><li>Brak motywacji w długim okresie</li><li>Arkusze kalkulacyjne</li></ul>
             <p class="quote">„Chcę widzieć, ile mi brakuje i kiedy dam radę.”</p>
           </article>
-          <article class="card persona">
+          <article class="card card--accent persona reveal">
             <div class="persona__head">
-              <div class="avatar"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-users"/></svg></div>
+              <div class="avatar avatar--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-users"/></svg></div>
               <div><h4>Anna, 44 lata</h4><span class="tag">Rodzic</span></div>
             </div>
             <p><strong>Cele:</strong></p>
@@ -180,7 +190,7 @@
         </div>
 
         <h3 class="mt-m">Mapa podróży użytkownika (Kasia)</h3>
-        <div class="table-wrap">
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr>
@@ -207,7 +217,7 @@
         </div>
 
         <h3 class="mt-m">Analiza konkurencji (benchmark)</h3>
-        <div class="table-wrap">
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr><th scope="col">Rozwiązanie</th><th scope="col">Mocne strony</th><th scope="col">Słabe strony</th><th scope="col">Wniosek dla Grosika</th></tr>
@@ -226,11 +236,13 @@
     <!-- ========== 2. UX ========== -->
     <section class="section" id="ux">
       <div class="container">
-        <span class="phase-number" aria-hidden="true">02</span>
-        <h2>Architektura i koncepcja (UX)</h2>
+        <div class="phase-head reveal">
+          <span class="phase-number" aria-hidden="true">02</span>
+          <h2>Architektura i koncepcja (UX)</h2>
+        </div>
 
         <div class="grid-2">
-          <div>
+          <div class="card reveal">
             <h3>Drzewo serwisu</h3>
             <ul class="tree">
               <li>Grosik
@@ -254,7 +266,7 @@
               </li>
             </ul>
           </div>
-          <div>
+          <div class="card reveal">
             <h3>Przepływy użytkownika (User flows)</h3>
             <p><strong>Flow 1: Dodanie wydatku</strong></p>
             <ol class="flow">
@@ -279,7 +291,7 @@
         </div>
 
         <h3 class="mt-m">Wireframe'y (low-fi)</h3>
-        <div class="grid-4">
+        <div class="grid-4 reveal">
           <figure class="wireframe">
             <div class="wire" aria-hidden="true">
               <div class="wire__box wire__box--s"></div>
@@ -325,12 +337,14 @@
     <!-- ========== 3. UI ========== -->
     <section class="section section--soft" id="ui">
       <div class="container">
-        <span class="phase-number" aria-hidden="true">03</span>
-        <h2>Kreacja i UI Design</h2>
+        <div class="phase-head reveal">
+          <span class="phase-number" aria-hidden="true">03</span>
+          <h2>Kreacja i UI Design</h2>
+        </div>
 
         <h3>Paleta kolorów i kontrast (WCAG 2.1 AA)</h3>
         <p>Każdy kolor tekstu ma kontrast min. <strong>4.5:1</strong> na białym tle. Jasny turkus służy wyłącznie do dekoracji i nigdy nie niesie informacji.</p>
-        <div class="grid-4">
+        <div class="palette reveal">
           <div class="swatch">
             <div class="swatch__color swatch__color--navy"></div>
             <div class="swatch__info"><strong>Navy #1B2A6B</strong>Nagłówki, przyciski<br><span class="status status--ok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>13.2:1</span></div>
@@ -353,24 +367,33 @@
           </div>
         </div>
 
+        <h3 class="mt-m">Gradienty</h3>
+        <p>Gradienty budowane są wyłącznie z kolorów palety – dzięki temu biały tekst na nich zachowuje kontrast z ciemniejszego końca.</p>
+        <div class="gradients reveal">
+          <figure class="wireframe"><div class="gradient-chip gradient-chip--brand"></div><figcaption class="wire__caption">Brand – przyciski, nagłówki ekranów</figcaption></figure>
+          <figure class="wireframe"><div class="gradient-chip gradient-chip--teal"></div><figcaption class="wire__caption">Teal – wyzwania</figcaption></figure>
+          <figure class="wireframe"><div class="gradient-chip gradient-chip--red"></div><figcaption class="wire__caption">Red – cele</figcaption></figure>
+          <figure class="wireframe"><div class="gradient-chip gradient-chip--green"></div><figcaption class="wire__caption">Green – sukces</figcaption></figure>
+        </div>
+
         <div class="grid-2 mt-m">
-          <div class="card">
+          <div class="card card--accent reveal">
             <h3>Typografia</h3>
-            <p class="type-sample--head">Lexend 800</p>
+            <p class="type-sample--head gradient-text">Lexend 800</p>
             <p>Nagłówki – krój zaprojektowany z myślą o łatwości czytania; nowoczesny i przyjazny młodym odbiorcom.</p>
             <p class="type-sample--body">Source Sans 3 400 / 600</p>
             <p>Tekst główny – neutralny i bardzo czytelny, min. 16 px, interlinia 1.6.</p>
           </div>
-          <div class="card">
+          <div class="card card--accent reveal">
             <h3>Tokeny</h3>
             <div class="table-wrap">
               <table>
                 <thead><tr><th scope="col">Token</th><th scope="col">Wartość</th></tr></thead>
                 <tbody>
-                  <tr><td><code>--space-xs / s / m / l</code></td><td>8 / 16 / 32 / 64 px (rytm 8 px)</td></tr>
-                  <tr><td><code>--icon-sm / md / lg</code></td><td>20 / 24 / 32 px</td></tr>
-                  <tr><td><code>--radius</code> / <code>--radius-pill</code></td><td>12 px / 999 px</td></tr>
-                  <tr><td><code>--duration-fast / duration</code></td><td>150 / 250 ms</td></tr>
+                  <tr><td><code>--space-xs … xl</code></td><td>8 / 16 / 32 / 64 / 96 px</td></tr>
+                  <tr><td><code>--icon-sm / md / lg</code></td><td>20 / 24 / 28 px</td></tr>
+                  <tr><td><code>--radius-s / radius / radius-l</code></td><td>10 / 16 / 28 px</td></tr>
+                  <tr><td><code>--duration-fast / duration / slow</code></td><td>150 / 250 / 600 ms</td></tr>
                   <tr><td>Cel dotykowy</td><td>min. 44 × 44 px</td></tr>
                 </tbody>
               </table>
@@ -379,15 +402,18 @@
         </div>
 
         <h3 class="mt-m">Komponenty</h3>
-        <div class="card component-row">
+        <div class="card component-row reveal">
           <a href="#ui" class="btn">Przycisk główny</a>
-          <a href="#ui" class="btn btn--outline">Przycisk drugorzędny</a>
+          <a href="#ui" class="btn btn--ghost">Przycisk drugorzędny</a>
           <span class="tag">Etykieta</span>
           <div class="progress-demo">
-            <div class="phone__bar" style="--fill: 70%"></div>
+            <div class="progress progress--dark" style="--fill: 70%"></div>
             <small>Pasek postępu celu</small>
           </div>
-          <span class="card__icon card__icon--red"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
+          <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+          <span class="icon-badge icon-badge--red"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
+          <span class="icon-badge icon-badge--teal"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+          <span class="icon-badge icon-badge--green"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
         </div>
         <ul class="icon-list mt-m">
           <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Ikony SVG z jednej rodziny (styl liniowy, grubość 2 px) zamiast emoji – wyglądają tak samo na każdym systemie.</li>
@@ -398,30 +424,68 @@
         </ul>
 
         <h3 class="mt-m">Ekrany high-fi</h3>
-        <div class="grid-3">
+        <div class="hifi reveal">
           <div class="phone" role="img" aria-label="Ekran budżetu: zostało 48,50 zł na ten tydzień">
             <div class="phone__screen">
-              <p>Zostało na ten tydzień</p>
-              <p class="phone__big">48,50 zł</p>
-              <div class="phone__bar" style="--fill: 65%"></div>
-              <div class="phone__tile"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-utensils"/></svg>Jedzenie – 22 zł</div>
-              <div class="phone__tile"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-gamepad"/></svg>Rozrywka – 15 zł</div>
+              <div class="screen__header">
+                <small>Zostało na ten tydzień</small>
+                <p class="screen__big">48,50 zł</p>
+                <div class="progress" style="--fill: 65%"></div>
+                <small>Wykorzystano 65% budżetu</small>
+              </div>
+              <div class="screen__body">
+                <p class="screen__label">Ostatnie wydatki</p>
+                <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm"><use href="#i-utensils"/></svg></span>Jedzenie<b>22 zł</b></div>
+                <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm"><use href="#i-gamepad"/></svg></span>Rozrywka<b>15 zł</b></div>
+                <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm"><use href="#i-bus"/></svg></span>Bilet<b>14,50 zł</b></div>
+              </div>
+              <div class="phone__tabbar">
+                <svg class="icon is-active"><use href="#i-wallet"/></svg>
+                <svg class="icon"><use href="#i-target"/></svg>
+                <svg class="icon"><use href="#i-trophy"/></svg>
+                <svg class="icon"><use href="#i-user"/></svg>
+              </div>
             </div>
           </div>
-          <div class="phone" role="img" aria-label="Ekran celu: słuchawki, 60% zebranej kwoty">
+          <div class="phone" role="img" aria-label="Ekran celu: słuchawki, zebrano 180 z 300 zł">
             <div class="phone__screen">
-              <p>Twój cel</p>
-              <p class="phone__big"><svg class="icon" aria-hidden="true"><use href="#i-headphones"/></svg>Słuchawki</p>
-              <div class="phone__bar" style="--fill: 60%"></div>
-              <div class="phone__tile">Odkładaj 20 zł / tydz.</div>
+              <div class="screen__header">
+                <small>Twój cel</small>
+                <p class="screen__big"><svg class="icon"><use href="#i-headphones"/></svg>Słuchawki</p>
+                <div class="progress" style="--fill: 60%"></div>
+                <small>180 z 300 zł</small>
+              </div>
+              <div class="screen__body">
+                <p class="screen__label">Plan</p>
+                <div class="phone__tile"><span class="tile__icon"><svg class="icon icon--sm"><use href="#i-trend"/></svg></span>Odkładaj<b>20 zł / tydz.</b></div>
+                <div class="phone__tile phone__tile--correct">Cel osiągniesz za 6 tygodni<svg class="icon icon--sm"><use href="#i-check"/></svg></div>
+              </div>
+              <div class="phone__tabbar">
+                <svg class="icon"><use href="#i-wallet"/></svg>
+                <svg class="icon is-active"><use href="#i-target"/></svg>
+                <svg class="icon"><use href="#i-trophy"/></svg>
+                <svg class="icon"><use href="#i-user"/></svg>
+              </div>
             </div>
           </div>
           <div class="phone" role="img" aria-label="Ekran quizu dnia: co to jest inflacja">
             <div class="phone__screen">
-              <p>Quiz dnia</p>
-              <p class="phone__big">Co to jest inflacja?</p>
-              <div class="phone__tile">A. Wzrost cen w czasie</div>
-              <div class="phone__tile">B. Rodzaj konta</div>
+              <div class="screen__header">
+                <small>Quiz dnia</small>
+                <p class="screen__big">Co to jest inflacja?</p>
+              </div>
+              <div class="screen__body">
+                <div class="phone__tile phone__tile--correct">A. Wzrost cen w czasie<svg class="icon icon--sm"><use href="#i-check"/></svg></div>
+                <div class="phone__tile">B. Rodzaj konta</div>
+                <div class="phone__tile">C. Podatek od zakupów</div>
+                <p class="phone__streak"><svg class="icon icon--sm"><use href="#i-flame"/></svg>Seria: 7 dni</p>
+              </div>
+              <div class="phone__tabbar">
+                <svg class="icon"><use href="#i-wallet"/></svg>
+                <svg class="icon"><use href="#i-target"/></svg>
+                <svg class="icon is-active"><use href="#i-trophy"/></svg>
+                <svg class="icon"><use href="#i-user"/></svg>
+              </div>
             </div>
           </div>
         </div>
@@ -431,28 +495,30 @@
     <!-- ========== 4. WALIDACJA ========== -->
     <section class="section" id="walidacja">
       <div class="container">
-        <span class="phase-number" aria-hidden="true">04</span>
-        <h2>Walidacja</h2>
+        <div class="phase-head reveal">
+          <span class="phase-number" aria-hidden="true">04</span>
+          <h2>Walidacja</h2>
+        </div>
         <!-- TODO: podmień na wyniki własnych testów -->
         <p>Interaktywny prototyp przetestowałem/am z <strong>4 nowymi osobami</strong> (13, 15, 16 i 18 lat), które nie brały udziału w wywiadach. Metoda: moderowany test zadaniowy + „thinking aloud”.</p>
 
         <div class="grid-3">
-          <div class="card">
+          <div class="card card--accent reveal">
             <div class="result"><span class="result__num">4/4</span><span>ukończyło dodanie wydatku</span></div>
             <p><strong>H1 potwierdzona:</strong> „Dodanie wydatku zajmie mniej niż 15 s.” Średnio: 9 s.</p>
           </div>
-          <div class="card">
+          <div class="card card--accent reveal">
             <div class="result"><span class="result__num">3/4</span><span>utworzyło cel bez pomocy</span></div>
             <p><strong>H2 częściowo:</strong> wybór terminu z kalendarza był kłopotliwy.</p>
           </div>
-          <div class="card">
+          <div class="card card--accent reveal">
             <div class="result"><span class="result__num">4/4</span><span>chce korzystać dalej</span></div>
             <p><strong>H3 potwierdzona:</strong> „Odznaki zachęcą do codziennego wejścia.”</p>
           </div>
         </div>
 
         <h3 class="mt-m">Wnioski i iteracje</h3>
-        <div class="table-wrap">
+        <div class="table-wrap reveal">
           <table>
             <thead><tr><th scope="col">Problem</th><th scope="col">Iteracja</th></tr></thead>
             <tbody>
@@ -468,23 +534,42 @@
 
     <!-- ========== DECYZJE ========== -->
     <section class="section section--soft" id="decyzje">
-      <div class="container grid-2">
-        <div class="card">
-          <h3>Uzasadnienie biznesowe</h3>
-          <ul>
-            <li><strong>Model:</strong> darmowa dla ucznia; finansowanie z grantów edukacyjnych i licencji dla szkół (panel nauczyciela).</li>
-            <li><strong>Brak podpinania konta</strong> – niższy próg wejścia i brak wymagań regulacyjnych dla usług płatniczych.</li>
-            <li><strong>Grywalizacja</strong> zwiększa retencję – kluczowy wskaźnik dla aplikacji edukacyjnych.</li>
-          </ul>
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Uzasadnienie</span>
+          <h2>Dlaczego tak, a nie inaczej?</h2>
         </div>
-        <div class="card">
-          <h3>Uzasadnienie technologiczne</h3>
-          <ul>
-            <li><strong>Aplikacja mobilna</strong> – telefon to główne urządzenie nastolatków.</li>
-            <li><strong>Framework wieloplatformowy</strong> (np. Flutter / React Native) – jeden kod na iOS i Android.</li>
-            <li><strong>Dane lokalnie na urządzeniu</strong> – mniej danych osobowych nieletnich na serwerze (RODO).</li>
-            <li>Ta strona: czysty HTML/CSS/JS na GitHub Pages – darmowy hosting i kontrola wersji.</li>
-          </ul>
+        <div class="grid-2">
+          <div class="card card--accent reveal">
+            <span class="icon-badge icon-badge--green"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></span>
+            <h3>Uzasadnienie biznesowe</h3>
+            <ul>
+              <li><strong>Model:</strong> darmowa dla ucznia; finansowanie z grantów edukacyjnych i licencji dla szkół (panel nauczyciela).</li>
+              <li><strong>Brak podpinania konta</strong> – niższy próg wejścia i brak wymagań regulacyjnych dla usług płatniczych.</li>
+              <li><strong>Grywalizacja</strong> zwiększa retencję – kluczowy wskaźnik dla aplikacji edukacyjnych.</li>
+            </ul>
+          </div>
+          <div class="card card--accent reveal">
+            <span class="icon-badge icon-badge--teal"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+            <h3>Uzasadnienie technologiczne</h3>
+            <ul>
+              <li><strong>Aplikacja mobilna</strong> – telefon to główne urządzenie nastolatków.</li>
+              <li><strong>Framework wieloplatformowy</strong> (np. Flutter / React Native) – jeden kod na iOS i Android.</li>
+              <li><strong>Dane lokalnie na urządzeniu</strong> – mniej danych osobowych nieletnich na serwerze (RODO).</li>
+              <li>Ta strona: czysty HTML/CSS/JS na GitHub Pages – darmowy hosting i kontrola wersji.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Dziękuję za uwagę!</h2>
+          <p>Wróć na stronę główną, żeby zobaczyć prezentację aplikacji Grosik.</p>
+          <a href="index.html" class="btn btn--light">Strona główna <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>

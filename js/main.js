@@ -1,4 +1,6 @@
-// Grosik – prosty skrypt: menu mobilne + slider
+// Grosik – prosty skrypt: menu, nagłówek, slider, animacje przy przewijaniu
+
+document.documentElement.classList.add("js");
 
 // 1. Menu mobilne
 const toggle = document.querySelector(".nav__toggle");
@@ -10,29 +12,44 @@ if (toggle && nav) {
     toggle.setAttribute("aria-expanded", open);
     toggle.setAttribute("aria-label", open ? "Zamknij menu" : "Otwórz menu");
   });
+
+  // zamknij menu po kliknięciu w link
+  nav.querySelectorAll("a").forEach((link) =>
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    })
+  );
 }
 
-// 2. Slider z kropkami
-//    - autoplay co 6 s, przycisk pauzy (WCAG 2.2.2)
+// 2. Cień pod nagłówkiem po przewinięciu
+const header = document.querySelector(".header");
+const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 10);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+// 3. Slider
+//    - autoplay co 5 s, przycisk pauzy (WCAG 2.2.2)
 //    - zatrzymuje się po najechaniu myszą / fokusie klawiatury
 //    - brak autoplay przy "ograniczonym ruchu" w systemie
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const slider = document.querySelector(".slider");
 
 if (slider) {
   const slides = slider.querySelectorAll(".slide");
   const dotsBox = slider.querySelector(".slider__dots");
   const pauseBtn = slider.querySelector(".slider__pause");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const caption = slider.querySelector(".slider__caption");
 
   let current = 0;
   let timer = null;
-  let paused = reduceMotion; // użytkownik (lub system) wyłączył autoplay
+  let paused = reduceMotion;
 
   slides.forEach((slide, i) => {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "slider__dot";
-    dot.setAttribute("aria-label", "Pokaż slajd " + (i + 1) + " z " + slides.length);
+    dot.setAttribute("aria-label", "Pokaż ekran " + (i + 1) + " z " + slides.length + ": " + slide.dataset.title);
     dot.addEventListener("click", () => showSlide(i));
     dotsBox.appendChild(dot);
   });
@@ -47,11 +64,12 @@ if (slider) {
     slides[current].classList.add("is-active");
     dots[current].classList.add("is-active");
     dots[current].setAttribute("aria-current", "true");
+    caption.innerHTML = "<strong>" + slides[i].dataset.title + "</strong><span>" + slides[i].dataset.text + "</span>";
   }
 
   function start() {
     if (paused || timer) return;
-    timer = setInterval(() => showSlide((current + 1) % slides.length), 6000);
+    timer = setInterval(() => showSlide((current + 1) % slides.length), 5000);
   }
 
   function stop() {
@@ -81,6 +99,26 @@ if (slider) {
   start();
 }
 
-// 3. Rok w stopce
+// 4. Pojawianie się elementów przy przewijaniu
+const revealItems = document.querySelectorAll(".reveal");
+
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((el) => el.classList.add("is-visible"));
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  revealItems.forEach((el) => observer.observe(el));
+}
+
+// 5. Rok w stopce
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
